@@ -6,7 +6,7 @@ Main
 .start-screen {
     background: url(../../assets/start-screen-background.jpg);
     background-size: cover;
-    height: 908px;
+    /* height: 908px; */
 }
 
 .start-screen-content {
@@ -15,13 +15,11 @@ Main
 
 .start-screen-content .content {
     margin-top: 144px;
+    width: 42%;
 }
 
  .puppy {
-    width: 698px;
-    height: 728px;
-    background: url("../../assets/start-screen-puppy.png");
-    margin: 25px 42px;
+    margin: 30px 0px 0;
 }
 
 .about-container {
@@ -30,13 +28,11 @@ Main
 }
 
 .about-content {
-    width: 430px;
-    height: 380px;
+    width: 38%;
 }
 
 .about-pets {
-    width: 300px;
-    height: 408px;
+    width: 27%;
     margin: 0 120px 0 135px;
 }
 
@@ -119,12 +115,13 @@ Main
 
 .donation {
     background-color: #F6F6F6;
-    padding: 80px 182px 86px;
+    padding: 80px 0px 68px;
 }
 
 .donation-content {
     display: flex;
     justify-content: center;
+    margin-left: 125px;
 }
 
 .donation-content .content{
@@ -148,6 +145,12 @@ Main
     background: #F1CDB3;
     border-radius: 9px;
     margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.credit-card:hover {
+    cursor: pointer;
+    background: #FDDCC4;
 }
 
 .credit-card-icon {
@@ -162,7 +165,6 @@ Main
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 1200px
 }
 
 .help-content h2{
@@ -170,13 +172,14 @@ Main
     text-align: center;
 }
 
+
+
 /*
 =============
 Typography
 =============
 */
 .start-screen-content h1{
-    width: 310px;
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
@@ -185,14 +188,14 @@ Typography
     color: white;
     letter-spacing: 0.001em;
     margin: 47px 0 45px;
+    width: 67%;
 }
 
 .start-screen-content p{
     color: #CDCDCD;
-    width: 460px;
     letter-spacing: 0.012em;
     line-height: 23px;
-    margin: 0px 0px 44px;
+    margin: 0px 0px 60px;
 }
 
 .about-content h2{
@@ -200,8 +203,16 @@ Typography
     margin: 14px 0 25px;
 }
 
+.about-content p{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+}
+
 .help-content h2 {
-    width: 308px;
+    width: 310px;
     margin-bottom: 60px;
 }
 
@@ -251,3 +262,115 @@ Typography
     margin: 0 0 20px;
     width: 290px;
 } 
+
+/*==================
+768px <= width < 1280px
+==================*/
+
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+
+    .wrapper {
+        width: 92%;
+        /* width: 708px; */
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .start-screen-content {
+        flex-direction: column;
+    }
+
+    .start-screen-content .content {
+        width: calc(100% - 235px);
+        margin-top: 0;
+        margin: 0 17%;
+    }
+
+    .button.primary {
+        margin: 59px 27% 100px;
+    }
+
+    .start-screen-content h1 {
+        margin: 30px 0 41px;
+    }
+    
+    .start-screen-content p{
+        margin: 0 0 64px;
+    }
+
+    .help-list-item {
+        margin: 1px 16px 55px;
+        min-width: 28%;
+    }
+
+    .donation-content {
+        margin-left: 0;
+        flex-direction: column;
+    }
+
+    .card:last-of-type {
+        display: none;
+    }
+
+    .card {
+        margin: 0px 19px 0;
+    }
+
+    .about-container {
+        flex-direction: column-reverse;  
+        padding: 64px 40px 120px;
+    }
+
+    .puppy {
+        text-align: center;
+        margin: 116px 0 0;
+        padding-left: 138px;
+    }
+
+    .about-content {
+        width: calc(100% - 200px);
+        /* margin-top: 0; */
+        margin: 0 100px;
+    }
+
+    .about-content p {
+        line-height: 170%;
+    }
+
+    .about-pets {
+        margin:60px 137px 0 164px;
+    }
+
+    .pets-content {
+        padding: 4px 0 0;
+    }
+
+    .pets-content h2{
+        margin: 53px 0 60px;
+    }
+
+    .donation {
+        padding: 80px 0 100px;
+    }
+
+    .donation-content {
+        width: calc(100% - 200px);
+        /* margin-top: 0; */
+        margin: 0 100px;
+        flex-direction: column-reverse;
+    }
+
+    .donation-content .content {
+        width: 75%;
+        margin: 2px 13%;
+    }
+
+    .donation-dog {
+        margin-top: 45px;
+    }
+
+    header {
+        padding-top: 30px;
+    }
+
+}

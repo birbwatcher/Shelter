@@ -19,11 +19,23 @@ Header
     padding-top: 30px;
 }
 
+.logo a {
+    color: #545454;
+}
+
 header {
+    position: fixed;
+    width: 100vw;
     height: 120px;
     background-color: #FFFFFF;
-    padding: 0 103px 0;
+    padding: 0 0px 0;
 }
+
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 .top-menu ul {
     margin-top: 45px;
@@ -36,8 +48,9 @@ Main
 */
 
 .title {
-    padding-top: 57px;
+    padding-top: 200px;
     margin-bottom: 58px;
+    margin-top: 0px;
 }
 
 .cards-container {

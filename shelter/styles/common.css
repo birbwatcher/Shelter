@@ -58,7 +58,6 @@ Buttons
 */
 
 .button {
-    height: 52px;
     border-radius: 52px;
     padding: 15px 45px;
     font-family: 'Georgia';
@@ -69,6 +68,7 @@ Buttons
     color: #292929;
     background-color: transparent;
     border: 1px solid #F1CDB3;
+    text-decoration: none;
 }
 
 .button.primary {
@@ -123,6 +123,12 @@ Slider
     align-items: center;
 }
 
+.cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .card {
     display: flex;
     flex-direction: column;
@@ -131,6 +137,11 @@ Slider
     height: 435px;
     background: #FAFAFA;
     border-radius: 9px;
+}
+
+.card:hover {
+    background-color: #FFFFFF;
+    cursor: pointer;
 }
 
 .pets-card-title {
@@ -161,6 +172,11 @@ Slider
     background: transparent;
 }
 
+.card:hover .button {
+    background: #F1CDB3;
+}
+
+
 /*
 =============
 Footer
@@ -183,7 +199,6 @@ footer {
 .puppy-footer {
     width: 300px;
     height: 310px;
-    background: url("../assets/footer-puppy.png");
     margin-top: 40px;
 }
 
@@ -216,6 +231,7 @@ footer {
 
 .email, .phone, .location-item {
     margin-bottom: 40px;
+    text-decoration: none;
 }
 
 
@@ -301,4 +317,26 @@ footer h4 {
     margin: 0;
     text-align: left;
     letter-spacing: 0.06em;
+}
+
+/*==================
+768px <= width < 1280px
+==================*/
+
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+
+    .footer-content{
+        flex-wrap: wrap;
+    }
+
+    .contacts, .location{
+        width: 50%;
+    }
+
+    .puppy-footer {
+        width: 300px;
+        height: 310px;
+        margin: 0 auto;
+    }
+
 }
