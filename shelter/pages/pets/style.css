@@ -1,0 +1,83 @@
+/*
+=============
+Wrapper
+=============
+*/
+
+body {
+    background: #F6F6F6;
+}
+
+
+/*
+============
+Header
+============
+*/
+
+.logo {
+    padding-top: 30px;
+}
+
+header {
+    height: 120px;
+    background-color: #FFFFFF;
+    padding: 0 103px 0;
+}
+
+.top-menu ul {
+    margin-top: 45px;
+}
+
+/*
+=============
+Main
+=============
+*/
+
+.title {
+    padding-top: 57px;
+    margin-bottom: 58px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    margin-bottom: 100px;
+}
+
+/*
+=============
+Typographics
+=============
+*/
+
+.subtitle {
+    color: #292929;
+}
+
+.top-menu a {
+    color: #545454;
+}
+
+h1 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+}

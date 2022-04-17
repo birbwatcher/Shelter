@@ -1,0 +1,253 @@
+/*
+=============
+Main
+=============
+*/
+.start-screen {
+    background: url(../../assets/start-screen-background.jpg);
+    background-size: cover;
+    height: 908px;
+}
+
+.start-screen-content {
+    display: flex;
+}
+
+.start-screen-content .content {
+    margin-top: 144px;
+}
+
+ .puppy {
+    width: 698px;
+    height: 728px;
+    background: url("../../assets/start-screen-puppy.png");
+    margin: 25px 42px;
+}
+
+.about-container {
+    display: flex;
+    padding: 90px 40px;
+}
+
+.about-content {
+    width: 430px;
+    height: 380px;
+}
+
+.about-pets {
+    width: 300px;
+    height: 408px;
+    margin: 0 120px 0 135px;
+}
+
+.pets {
+    background-color:#F6F6F6;
+}
+
+.card {
+    margin: 0 45px 0;
+}
+
+.pets-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0 0;
+}
+
+.pets-content h2{
+    text-align: center;
+    width: 400px;
+    margin: 0 0 60px;
+}
+
+.pets-content > .button {
+    margin: 60px 0 100px;
+}
+
+.help-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 45px;
+
+}
+
+.help-list-item {
+    text-align: center;
+    margin: 0 60px 55px;
+    min-width: 60px;
+    padding-top: 88px;
+}
+
+.help-list-item:nth-child(1) {
+    background: url("../../assets/icon-pet-food.svg") no-repeat top;
+}
+
+.help-list-item:nth-child(2) {
+    background: url("../../assets/icon-transportation.svg") no-repeat top;
+}   
+
+.help-list-item:nth-child(3) {
+    background: url("../../assets/icon-toys.svg") no-repeat top;
+}
+
+.help-list-item:nth-child(4) {
+    background: url("../../assets/icon-bowls-and-cups.svg") no-repeat top;
+}
+
+.help-list-item:nth-child(5) {
+    background: url("../../assets/icon-shampoos.svg") no-repeat top;
+}   
+
+.help-list-item:nth-child(6) {
+    background: url("../../assets/icon-vitamins.svg") no-repeat top;
+}
+
+.help-list-item:nth-child(7) {
+    background: url("../../assets/icon-medicines.svg") no-repeat top;
+}
+
+.help-list-item:nth-child(8) {
+    background: url("../../assets/collars-or-leashes.svg") no-repeat top;
+}   
+
+.help-list-item:nth-child(9) {
+    background: url("../../assets/icon-sleeping-area.svg") no-repeat top;
+}
+
+.donation {
+    background-color: #F6F6F6;
+    padding: 80px 182px 86px;
+}
+
+.donation-content {
+    display: flex;
+    justify-content: center;
+}
+
+.donation-content .content{
+    width: 30%;
+    margin: 0 31px;
+    padding-right: 150px;
+}
+
+.donation-dog {
+    width: 505px;
+    height: 261px;
+    margin-top: 11px;
+}
+
+.credit-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 349px;
+    height: 43px;
+    background: #F1CDB3;
+    border-radius: 9px;
+    margin-bottom: 20px;
+}
+
+.credit-card-icon {
+    width: 30px;
+    height: 23px;
+    background: url("../../assets/credit-card.svg");
+    margin-right: 15px;
+}
+
+.help-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1200px
+}
+
+.help-content h2{
+    margin: 80px 0 60px;
+    text-align: center;
+}
+
+/*
+=============
+Typography
+=============
+*/
+.start-screen-content h1{
+    width: 310px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 130%;
+    color: white;
+    letter-spacing: 0.001em;
+    margin: 47px 0 45px;
+}
+
+.start-screen-content p{
+    color: #CDCDCD;
+    width: 460px;
+    letter-spacing: 0.012em;
+    line-height: 23px;
+    margin: 0px 0px 44px;
+}
+
+.about-content h2{
+    width: 370px;
+    margin: 14px 0 25px;
+}
+
+.help-content h2 {
+    width: 308px;
+    margin-bottom: 60px;
+}
+
+.help-list-item h4{
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #545454;
+    margin: 0;
+    display: inline-block;
+}
+
+.donation h5 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #545454;
+    margin: 0 0 20px;
+}
+
+.credit-card h4 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.donation-content .content{
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #B2B2B2;
+}
+
+.donation-content h2{
+    margin: 0 0 20px;
+    width: 290px;
+} 
