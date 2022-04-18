@@ -132,7 +132,7 @@ Main
 
 .donation-dog {
     width: 505px;
-    height: 261px;
+    /* height: 261px; */
     margin-top: 11px;
 }
 
@@ -267,7 +267,18 @@ Typography
 768px <= width < 1280px
 ==================*/
 
+@media screen and (min-width: 1280px) {
+    .burger {
+        display: none;
+    }
+}
+
+
 @media screen and (max-width: 1279px) and (min-width: 768px) {
+
+    .burger {
+        display: none;
+    }
 
     .wrapper {
         width: 92%;
@@ -372,5 +383,257 @@ Typography
     header {
         padding-top: 30px;
     }
+
+}
+
+@media screen and (max-width: 767px) {
+
+    nav {
+        display: none;
+    }
+
+    .wrapper {
+        width: 93%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .start-screen-content {
+        flex-direction: column;
+    }
+
+    .start-screen-content .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0;
+        margin: 0 auto;
+    }
+
+    .puppy {
+        margin: 36% 0 0 13%;
+    }
+
+    .button.primary {
+        margin: 0 auto;
+    }
+
+    .about-container {
+        flex-direction: column-reverse;
+        padding: 0;  
+    }
+
+    .about-content {
+        width: calc(100% - 23px);
+        margin: 0 12px 0;
+    }
+
+    .about-content h2 {
+        width: 100%;
+        margin: 43px 0 25px;
+    }
+
+    .about-content p {
+        text-align: justify;
+        padding-top: 0;
+        padding-bottom: 7px;
+    }
+    
+    .pets-content {
+        padding-top: 42px;
+        padding-bottom: 43px;
+    }
+
+    .pets-content h2 {
+        width: 100%;
+        margin: 0 0 40px;
+    }
+    
+    h2 {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #545454;
+        width: 100%;
+    }
+    
+    .about-pets {
+        width: auto;
+        margin: 19px 0 0 20px;
+    }
+
+    .about-pets img{
+        width: 93%;
+        margin-bottom: 39px;
+    }
+
+    .start-screen-content h1 {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: #FFFFFF;
+        text-align: center;
+        width: 85%;
+        margin: 47px auto 42px;
+    }
+
+    .start-screen-content p {
+        margin: 0 0 46px;
+        text-align: center;
+    }
+
+    .card:nth-last-of-type(-n+2){
+        display: none;
+    }
+
+    .help-content h2 {
+        margin-top: 42px;
+        margin-bottom: 40px;
+        width: 90%;
+    }
+
+    .help-list {
+        justify-content: space-around;
+        margin-bottom: 10px;
+    }
+
+    .help-list:last-child() {
+        justify-content: flex-start;
+    }
+
+    .help-list-item {
+        min-width: 43%;
+        margin: 0 0 29px;
+        padding-top: 70px;
+    }
+
+    .help-list-item:nth-child(n) {
+        background-size: 40%;
+    }
+
+    .help-list-item h4 {
+        font-size: 15px;
+    }
+
+    header {
+        padding-top: 31px;
+        margin-bottom: 12px;
+    }
+
+    .slider {
+        width: 100%;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        margin-bottom: 33px;
+    }
+    .card {
+        margin: 0 auto 0;
+    }
+
+    .button-round {
+        order: 2;
+        margin: 20px auto 10px;
+    }
+    
+    .donation {
+        padding: 43px 0px 0px;
+    }
+
+    .donation-content {
+        flex-direction: column-reverse;
+        margin: 0;
+    }
+
+    .donation-content .content {
+        width: 100%;
+        margin: 0;
+        padding-right: 0px;
+    }
+
+    .donation-content h2 {
+        margin: 0 auto 23px;
+        width: 72%;
+    }
+
+    .donation-content h5 {
+        font-size: 14px;
+        text-align: center;
+        margin: 0 0 25px;
+    }
+    
+    .donation-content p {
+        margin: 0 2% 37px;
+        text-align: justify;
+    }
+
+    .donation-dog {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .credit-card {
+        width: 94%;
+        margin: 0 auto 20px;
+    }
+
+    .credit-card h4 {
+        font-size: 15px;
+    }
+
+    /* .donation-dog {
+        width: 100%;
+        margin: 0;
+    } */
+
+    .donation-dog img {
+        width: 100%;
+        margin-bottom: 38px;
+    }
+
+    /* .contacts, .location {
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+    }
+
+    .puppy-footer {
+        margin: 0 auto;
+        width: 84%;
+    }
+
+    footer h3{
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.06em;
+        margin: 30px 0 40px;
+    }
+
+    footer .email {
+        margin-bottom: 40px;
+    }
+
+    footer .phone {
+        margin-bottom: 4px;
+    }
+
+    .location h3 {
+        width: 98%;
+        margin: 30px auto 40px;
+    } */
+
 
 }

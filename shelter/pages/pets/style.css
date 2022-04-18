@@ -94,3 +94,39 @@ h1 {
     letter-spacing: 0.06em;
     color: #545454;
 }
+
+/*==================
+768px <= width < 1280px
+==================*/
+
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+
+    .wrapper {
+        width: 92%;
+        /* width: 708px; */
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .cards-container {
+        justify-content: center;
+    }
+
+    .card:nth-last-of-type(-n+2) {
+        display: none;
+    }
+
+    .card {
+        margin: 0 20px 30px 20px;
+    }
+
+    .title {
+        margin-bottom: 29px;
+    }
+
+    .pagination {
+        padding-top: 11px;
+        margin-bottom: 75px;
+    }
+
+}

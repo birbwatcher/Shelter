@@ -51,6 +51,28 @@ Navigation
 }
 
 
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 30px;
+    margin: 10px;
+    margin-left: 13%;
+}
+
+.burger-line {
+    border: 1px solid #F1CDB3;
+    background-color: #F1CDB3;
+    width: 30px;
+    height: 0px;
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        justify-content: flex-start;
+    }
+}
+
 /*
 =============
 Buttons
@@ -202,7 +224,11 @@ footer {
     margin-top: 40px;
 }
 
-.email-icon, .phone-icon, .location-icon{
+.email-icon, .phone-icon {
+    margin-right: 20px;
+}
+
+.location-icon-boston {
     margin-right: 20px;
 }
 
@@ -224,6 +250,12 @@ footer {
     height: 40px;
 }
 
+.location-icon-boston {
+    background: url("../assets/icon-location.svg") no-repeat;
+    width: 40px;
+    height: 40px;
+}
+
 .email, .phone, .location-item {
     display: flex;
     align-items: center;
@@ -234,6 +266,9 @@ footer {
     text-decoration: none;
 }
 
+footer .location {
+
+}
 
 
 /*
@@ -329,14 +364,89 @@ footer h4 {
         flex-wrap: wrap;
     }
 
+    footer .contacts h3 {
+        margin: 31px 34px 40px;   
+    }
+
+    footer .location h3{
+        margin: 31px 19px 32px;
+    }
+
+    footer .location-item {
+        margin: 0 0 29px 15px;
+    }
+
+    .location-item {
+        margin-bottom: 34px;
+    }
+
+    .email, .phone {
+        margin: 0 0 40px 33px;
+    }
+
     .contacts, .location{
         width: 50%;
     }
 
+
     .puppy-footer {
         width: 300px;
         height: 310px;
-        margin: 0 auto;
+        margin: 18px auto 0;
     }
+}
+/*==================
+768px
+==================*/
+
+@media screen and (max-width: 767px) {
+
+    .contacts, .location {
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+    }
+
+    .puppy-footer {
+        margin: 0 auto;
+        width: 88%;
+        height: 100%;
+    }
+
+    footer h3{
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.06em;
+        margin: 30px 0 40px;
+    }
+
+    footer .email {
+        margin-bottom: 40px;
+    }
+
+    footer .phone {
+        margin-bottom: 4px;
+    }
+
+    .location h3 {
+        width: 98%;
+        margin: 30px auto 40px;
+    }
+
+    .location-item {
+        margin-bottom: 35px;
+    }
+
+    .email-icon, .phone-icon {
+        margin-right: 21px;
+        margin-left: 23px;
+    }
+
 
 }
