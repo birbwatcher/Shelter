@@ -111,6 +111,11 @@ Main
 =============
 */
 
+body{
+    width: 100%;
+    height: 100%;
+  }
+
 .pets-content {
     display: flex;
     flex-direction: column;
@@ -412,6 +417,11 @@ footer h4 {
 ==================*/
 
 @media screen and (max-width: 767px) {
+
+    body{
+        min-width: 320px;
+        overflow: auto;
+    }
 
     .contacts, .location {
         width: 100%;
