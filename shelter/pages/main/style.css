@@ -267,18 +267,18 @@ Typography
 768px <= width < 1280px
 ==================*/
 
-@media screen and (min-width: 1280px) {
+/* @media screen and (min-width: 1280px) {
     .burger {
         display: none;
     }
-}
+} */
 
 
 @media screen and (max-width: 1279px) and (min-width: 768px) {
 
-    .burger {
+    /* .burger {
         display: none;
-    }
+    } */
 
     .wrapper {
         width: 92%;
@@ -468,7 +468,7 @@ Typography
     }
 
     .about-pets img{
-        width: 93%;
+        width: 259px;
         margin-bottom: 39px;
     }
 
@@ -501,7 +501,7 @@ Typography
     }
 
     .help-list {
-        justify-content: space-around;
+        justify-content: left;
         margin-bottom: 10px;
     }
 
@@ -511,12 +511,12 @@ Typography
 
     .help-list-item {
         min-width: 43%;
-        margin: 0 0 29px;
+        margin: 0 10px 29px;
         padding-top: 70px;
     }
 
     .help-list-item:nth-child(n) {
-        background-size: 40%;
+        background-size: 50px;
     }
 
     .help-list-item h4 {

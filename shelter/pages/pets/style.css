@@ -130,3 +130,56 @@ h1 {
     }
 
 }
+
+@media (max-width: 767px) {
+
+    nav {
+        display: none;
+    }
+
+    .wrapper {
+        width: 93%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .burger {
+        margin: 40px;
+    }
+
+    .burger-line {
+        border: 1px solid #000000;
+        background-color: #000000;
+    }
+
+    h1 {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 130%;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #545454;
+    }
+
+    .title {
+        padding-top: 162px;
+        margin-bottom: 41px;
+    }
+
+    .card:nth-last-of-type(-n+5){
+        display: none;
+    }
+
+    .card {
+        margin: 0 auto 30px;
+    }
+
+    .pagination {
+        padding-top: 12px;
+        margin-bottom: 42px;
+    }
+
+}

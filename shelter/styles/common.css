@@ -27,6 +27,8 @@ header {
 }
 
 
+
+
 /*
 =============
 Navigation
@@ -358,7 +360,17 @@ footer h4 {
 768px <= width < 1280px
 ==================*/
 
+@media screen and (min-width: 1280px) {
+    .burger {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1279px) and (min-width: 768px) {
+
+    .burger {
+        display: none;
+    }
 
     .footer-content{
         flex-wrap: wrap;
@@ -411,8 +423,10 @@ footer h4 {
 
     .puppy-footer {
         margin: 0 auto;
-        width: 88%;
-        height: 100%;
+        width: 261px;
+        height: 268px;
+        /* width: 88%; */
+        /* height: 100%; */
     }
 
     footer h3{
