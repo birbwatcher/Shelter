@@ -6,7 +6,6 @@ Main
 .start-screen {
     background: url(../../assets/start-screen-background.jpg);
     background-size: cover;
-    /* height: 908px; */
 }
 
 .start-screen-content {
@@ -132,7 +131,6 @@ Main
 
 .donation-dog {
     width: 505px;
-    /* height: 261px; */
     margin-top: 11px;
 }
 
@@ -267,22 +265,10 @@ Typography
 768px <= width < 1280px
 ==================*/
 
-/* @media screen and (min-width: 1280px) {
-    .burger {
-        display: none;
-    }
-} */
-
-
-@media screen and (max-width: 1279px) and (min-width: 768px) {
-
-    /* .burger {
-        display: none;
-    } */
+@media screen and (max-width: 1279.9px) and (min-width: 768px) {
 
     .wrapper {
         width: 92%;
-        /* width: 708px; */
         padding: 0;
         margin: 0 auto;
     }
@@ -340,7 +326,6 @@ Typography
 
     .about-content {
         width: calc(100% - 200px);
-        /* margin-top: 0; */
         margin: 0 100px;
     }
 
@@ -366,7 +351,6 @@ Typography
 
     .donation-content {
         width: calc(100% - 200px);
-        /* margin-top: 0; */
         margin: 0 100px;
         flex-direction: column-reverse;
     }
@@ -386,7 +370,7 @@ Typography
 
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.9px) {
 
     nav {
         display: none;
@@ -530,7 +514,6 @@ Typography
 
     .slider {
         width: 100%;
-        /* flex-direction: column; */
         flex-wrap: wrap;
         margin-bottom: 33px;
     }
@@ -588,52 +571,8 @@ Typography
         font-size: 15px;
     }
 
-    /* .donation-dog {
-        width: 100%;
-        margin: 0;
-    } */
-
     .donation-dog img {
         width: 100%;
         margin-bottom: 38px;
     }
-
-    /* .contacts, .location {
-        width: 100%;
-    }
-
-    .footer-content {
-        flex-wrap: wrap;
-    }
-
-    .puppy-footer {
-        margin: 0 auto;
-        width: 84%;
-    }
-
-    footer h3{
-        font-family: 'Georgia';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 25px;
-        line-height: 130%;
-        text-align: center;
-        letter-spacing: 0.06em;
-        margin: 30px 0 40px;
-    }
-
-    footer .email {
-        margin-bottom: 40px;
-    }
-
-    footer .phone {
-        margin-bottom: 4px;
-    }
-
-    .location h3 {
-        width: 98%;
-        margin: 30px auto 40px;
-    } */
-
-
 }
