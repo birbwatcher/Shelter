@@ -43,6 +43,50 @@ header .wrapper {
 
 /*
 =============
+Main mobile menu
+=============
+*/
+
+.main-mobile-menu .logo {
+    margin-left: 25px;
+}
+
+.main-mobile-menu {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    transition: right 0.5s;
+}
+
+.main-mobile-menu.show {
+    right: 0;
+}
+
+.mobile-menu li{
+    list-style-type: none;
+}
+
+.mobile-menu a{
+    text-decoration: none;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 160%;
+    color: #545454;
+}
+
+.mobile-menu .active{
+    padding-bottom: 3px;
+    border-bottom: 3px solid #F1CDB3;
+}
+
+/*
+=============
 Main
 =============
 */
@@ -152,6 +196,7 @@ h1 {
 
     .burger {
         margin: 40px;
+        z-index: 1000;
     }
 
     .burger-line {

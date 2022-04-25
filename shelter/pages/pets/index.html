@@ -24,10 +24,25 @@
                         <li><a href="#contacts">Contacts</a></li>
                     </ul>
                 </nav>
+                <div class="overlay"></div>
                 <div class="burger">
                         <div class="burger-line"></div>
                         <div class="burger-line"></div>
                         <div class="burger-line"></div>
+                </div>
+                <div class="main-mobile-menu">
+                    <div class="logo">
+                        <a href="#" class="logo-title">Cozy House</a>
+                        <p class="subtitle">Shelter for pets in Boston</p>
+                    </div>
+                    <div class="mobile-menu">
+                        <ul>
+                            <li><a href="/shelter/pages/main/index.html">About the shelter</a></li>
+                            <li><a href="#" class="active">Our pets</a></li>
+                            <li><a href="#help">Help the shelter</a></li>
+                            <li><a href="#contacts">Contacts</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </header>
@@ -79,11 +94,11 @@
                     </div>
                 </div>
                 <section class="pagination">
-                    <button class="button-round button-round-inactive">&lt;&lt;</button>
-                    <button class="button-round button-round-inactive">&lt;</button>
-                    <button class="button-round button-round-active">1</button>
-                    <button class="button-round">&gt;</button>
-                    <button class="button-round">&gt;&gt;</button>
+                    <button class="button-round button-round-inactive" id="first">&lt;&lt;</button>
+                    <button class="button-round button-round-inactive" id="prev">&lt;</button>
+                    <button class="button-round button-round-active" id="counter">1</button>
+                    <button class="button-round" id="next">&gt;</button>
+                    <button class="button-round" id="last">&gt;&gt;</button>
                 </section>
             </div>
         </section>
@@ -119,6 +134,9 @@
                 </div>
             </div>
         </div>
-    </footer>  
+    </footer> 
+    <script src="../../styles/pets.js"></script> 
+    <script src="../../styles/script.js"></script> 
+  
 </body>
 </html>
