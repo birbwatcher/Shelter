@@ -70,6 +70,10 @@ Main
     margin-bottom: 100px;
 }
 
+.button-round {
+    margin: 0 10px;
+}
+
 /*
 =============
 Typographics
@@ -183,6 +187,10 @@ h1 {
     .pagination {
         padding-top: 12px;
         margin-bottom: 42px;
+    }
+
+    .button-round {
+        margin: 0 4px;
     }
 
 }

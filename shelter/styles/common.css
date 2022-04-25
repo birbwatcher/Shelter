@@ -200,7 +200,7 @@ Buttons
 
 .button {
     border-radius: 52px;
-    padding: 15px 45px;
+    padding: 15px 44px;
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
@@ -267,7 +267,16 @@ Slider
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    /* width: 100%; */
 }
+
+.card-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+} 
 
 .cards {
     display: flex;
@@ -300,7 +309,6 @@ Slider
     border: 2px solid #F1CDB3;
     box-sizing: border-box;
     border-radius: 50%;
-    margin-right: 8px;
     background-color: transparent;
 }
 
@@ -328,8 +336,22 @@ Slider
 Footer
 =============
 */
-.contacts, .location, .puppy-footer {
+/* .contacts, .location, .puppy-footer {
     width: 25%;
+} */
+
+.contacts, .location {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 310px;
+    height: 295px;
+}
+
+.footer-contacts {
+    display: flex;
+    justify-content: space-between;
+    width: 748px;
 }
 
 .footer-content {
@@ -386,7 +408,6 @@ footer {
 }
 
 .email, .phone, .location-item {
-    margin-bottom: 40px;
     text-decoration: none;
 }
 
@@ -463,7 +484,7 @@ footer h3 {
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #FFFFFF;
-    margin: 56px 0 40px;
+    margin: 56px 0 0px;
 }
 
 footer h4 {
@@ -526,9 +547,12 @@ footer h4 {
     .puppy-footer {
         width: 300px;
         height: 310px;
-        margin: 18px auto 0;
+        margin: 31px auto 0;
     }
+
 }
+
+
 /*==================
 768px
 ==================*/
@@ -539,9 +563,10 @@ footer h4 {
         min-width: 320px;
         overflow: auto;
     }
-
+    
     .contacts, .location {
         width: 100%;
+        height: 100%;
     }
 
     .footer-content {
@@ -586,6 +611,10 @@ footer h4 {
         margin-right: 21px;
         margin-left: 23px;
     }
+
+    .footer-contacts {
+        flex-direction: column;
+    } 
 
 
 }

@@ -24,7 +24,7 @@ Main
 
 .about-container {
     display: flex;
-    padding: 90px 40px;
+    padding: 90px 40px 77px;
 }
 
 .about-content {
@@ -32,8 +32,7 @@ Main
 }
 
 .about-pets {
-    width: 27%;
-    margin: 0 120px 0 135px;
+    margin: 0 121px 0 134px;
 }
 
 .pets {
@@ -66,15 +65,15 @@ Main
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 45px;
+    margin-bottom: 49px;
 
 }
 
 .help-list-item {
     text-align: center;
-    margin: 0 60px 55px;
+    margin: 0 60px 54px;
     min-width: 60px;
-    padding-top: 88px;
+    padding-top: 90px;
 }
 
 .help-list-item:nth-child(1) {
@@ -115,19 +114,18 @@ Main
 
 .donation {
     background-color: #F6F6F6;
-    padding: 80px 0px 68px;
+    padding: 77px 0px 88px;
 }
 
 .donation-content {
+    width: 915px;
     display: flex;
-    justify-content: center;
-    margin-left: 125px;
+    justify-content: space-between;
+    margin: auto;
 }
 
 .donation-content .content{
-    width: 30%;
-    margin: 0 31px;
-    padding-right: 150px;
+    margin: 0 0 0 31px;
 }
 
 .donation-dog {
@@ -172,6 +170,16 @@ Main
 }
 
 
+.button-round-left {
+    
+}
+
+.button-round-right {
+/* margin-left: 3px; */
+}
+
+
+
 
 /*
 =============
@@ -191,10 +199,14 @@ Typography
 }
 
 .start-screen-content p{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
     color: #CDCDCD;
-    letter-spacing: 0.012em;
-    line-height: 23px;
-    margin: 0px 0px 60px;
+    width: 94%;
+    padding-bottom: 42px;
 }
 
 .about-content h2{
@@ -208,6 +220,8 @@ Typography
     font-weight: 400;
     font-size: 15px;
     line-height: 160%;
+    color: #4C4C4C;
+    margin: 0 0 25px;
 }
 
 .help-content h2 {
@@ -293,7 +307,9 @@ Typography
     }
     
     .start-screen-content p{
-        margin: 0 0 64px;
+        margin: 0px 3px 17px;
+        font-size: 15px;
+        width: 100%;
     }
 
     .help-list-item {
@@ -311,12 +327,12 @@ Typography
     }
 
     .card {
-        margin: 0px 19px 0;
+        margin: 0px 0px 0;
     }
 
     .about-container {
         flex-direction: column-reverse;  
-        padding: 64px 40px 120px;
+        padding: 64px 40px 0px;
     }
 
     .puppy {
@@ -331,11 +347,11 @@ Typography
     }
 
     .about-content p {
-        line-height: 170%;
+        margin: 0 0 27px;
     }
 
     .about-pets {
-        margin:60px 137px 0 164px;
+        margin:52px auto 95px;
     }
 
     .pets-content {
@@ -343,16 +359,16 @@ Typography
     }
 
     .pets-content h2{
-        margin: 53px 0 60px;
+        margin: 76px 0 60px;
     }
 
     .donation {
-        padding: 80px 0 100px;
+        padding: 70px 0 100px;
     }
 
     .donation-content {
         width: calc(100% - 200px);
-        margin: 0 100px;
+        margin: 0 98px;
         flex-direction: column-reverse;
     }
 
@@ -362,11 +378,19 @@ Typography
     }
 
     .donation-dog {
-        margin-top: 45px;
+        margin: 45px auto 0;
     }
 
     header {
         padding-top: 30px;
+    }
+
+    .card-list {
+        width: 583px;
+    }
+
+    .slider {
+        width: 708px;
     }
 
 }
@@ -410,8 +434,8 @@ Typography
     }
 
     .about-content {
-        width: calc(100% - 23px);
-        margin: 0 12px 0;
+        width: calc(100% - 28px);
+        margin: 0 14px 0;
     }
 
     .about-content h2 {
@@ -422,7 +446,7 @@ Typography
     .about-content p {
         text-align: justify;
         padding-top: 0;
-        padding-bottom: 7px;
+        margin-bottom: 21px;
     }
     
     .pets-content {
@@ -449,7 +473,7 @@ Typography
     
     .about-pets {
         width: auto;
-        margin: 19px 0 0 20px;
+        margin: 19px auto 0px;
     }
 
     .about-pets img{
@@ -471,8 +495,10 @@ Typography
     }
 
     .start-screen-content p {
-        margin: 0 0 46px;
+        margin: 0 0 42px;
         text-align: center;
+        width: 100%;
+        padding-bottom: 0px;
     }
 
     .card:nth-last-of-type(-n+2){
@@ -486,7 +512,7 @@ Typography
     }
 
     .help-list {
-        justify-content: left;
+        justify-content: space-between;
         margin-bottom: 10px;
     }
 
@@ -495,8 +521,8 @@ Typography
     }
 
     .help-list-item {
-        min-width: 43%;
-        margin: 0 10px 29px;
+        min-width: 46%;
+        margin: 0 0px 29px;
         padding-top: 70px;
     }
 
@@ -514,9 +540,10 @@ Typography
     }
 
     .slider {
-        width: 100%;
+        width: 264px;
         flex-wrap: wrap;
         margin-bottom: 33px;
+        justify-content: center;
     }
     .card {
         margin: 0 auto 0;
@@ -532,6 +559,7 @@ Typography
     }
 
     .donation-content {
+        width: 100%;
         flex-direction: column-reverse;
         margin: 0;
     }
@@ -548,13 +576,15 @@ Typography
     }
 
     .donation-content h5 {
-        font-size: 14px;
+        font-size: 13px;
         text-align: center;
         margin: 0 0 25px;
+        letter-spacing: 0.07em;
+        
     }
     
     .donation-content p {
-        margin: 0 2% 37px;
+        margin: 0 3% 40px;
         text-align: justify;
     }
 
@@ -574,6 +604,6 @@ Typography
 
     .donation-dog img {
         width: 100%;
-        margin-bottom: 38px;
+        margin-bottom: 37px;
     }
 }
