@@ -768,9 +768,25 @@ footer h4 {
         height: 350px;
     }
 
+    .modal-content-content {
+        padding: 0 20px 88px 30px;
+    }
+
     .modal-content-content p{
         font-size: 13px;
-        margin: 20px 10px;
+        margin: 6px 0px 6px;
+    }
+
+    .modal-content-content ul{
+        margin-top: 0;
+    }
+
+    .modal-content h4 {
+        margin-bottom: 0;
+    }
+
+    .modal-content li {
+        padding-bottom: 4px;
     }
 
 }
@@ -792,15 +808,34 @@ footer h4 {
 
     .modal-close-button {
         margin: 0 10px 0 83%;
-    }
+    } 
 
     .modal-content-content p{
         font-size: 13px;
-        margin: 20px 10px;
+        margin: 10px 10px;
+    }
+
+    .modal-content-content {
+        padding: 0;
+        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    }
+
+    .modal-content h2 {
+        text-align: center;
+    }
+
+    .modal-content ul{
+        margin-top: 0px;
+    }
+
+    .modal-content li {
+        padding-bottom: 0px;
+        font-size: 13px;
     }
 
     .modal-content-content h4{
         text-align: center;
+        margin-bottom: 0px;
     }
 
 }
