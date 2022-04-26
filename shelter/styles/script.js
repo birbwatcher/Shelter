@@ -1,5 +1,3 @@
-
-
 (function() {
     let counter = 1;
     const width = window.innerWidth;
@@ -30,9 +28,9 @@
     </div>`;
     }
 
-    function refreshCards() {
+    function refreshCards(counter3, cards3) {
         for (let i = 0; i < document.getElementsByClassName('card').length; i++) {
-            document.getElementsByClassName('card')[i].onclick = () => createPopup((counter - 1)*cards + i);
+            document.getElementsByClassName('card')[i].onclick = () => createPopup((counter3 - 1)*cards3 + i);
         }
     }
 
@@ -73,64 +71,110 @@
     document.getElementsByClassName('overlay')[0].onclick = hideElements;
     document.getElementsByClassName('main-mobile-menu')[0].onclick = hideElements;
 
-    refreshCards();
+    refreshCards(counter, cards);
 
     // pagination
-    document.getElementById('counter').innerText = counter;
-
-    document.getElementById('next').onclick = function() {
-        for (let i = 0; i < cards; i++) {
-            document.getElementsByClassName('card')[i].innerHTML = getCardTemplate(cards*counter + i);
-        }
-        counter = ++counter;
+    if (document.getElementById('counter')) {
         document.getElementById('counter').innerText = counter;
-        if (counter === pets.length/cards) {
+
+        document.getElementById('next').onclick = function() {
+            for (let i = 0; i < cards; i++) {
+                document.getElementsByClassName('card')[i].innerHTML = getCardTemplate(cards*counter + i);
+            }
+            counter = ++counter;
+            document.getElementById('counter').innerText = counter;
+            if (counter === pets.length/cards) {
+                this.classList.add('button-round-inactive');
+                document.getElementById('last').classList.add('button-round-inactive');
+            }
+            document.getElementById('prev').classList.remove('button-round-inactive');
+            document.getElementById('first').classList.remove('button-round-inactive');
+            refreshCards(counter, cards);
+        }
+    
+        document.getElementById('last').onclick = function() {
+            counter = pets.length/cards; 
+            for (let i = 0; i < cards; i++) {
+                document.getElementsByClassName('card')[i].innerHTML = getCardTemplate(cards*(counter - 1) + i);
+            }
+            document.getElementById('counter').innerText = counter;
             this.classList.add('button-round-inactive');
-            document.getElementById('last').classList.add('button-round-inactive');
+            document.getElementById('next').classList.add('button-round-inactive');
+            document.getElementById('prev').classList.remove('button-round-inactive');
+            document.getElementById('first').classList.remove('button-round-inactive');
+            refreshCards(counter, cards);
         }
-        document.getElementById('prev').classList.remove('button-round-inactive');
-        document.getElementById('first').classList.remove('button-round-inactive');
-        refreshCards();
-    }
-
-    document.getElementById('last').onclick = function() {
-        counter = pets.length/cards; 
-        for (let i = 0; i < cards; i++) {
-            document.getElementsByClassName('card')[i].innerHTML = getCardTemplate(cards*(counter - 1) + i);
+    
+        document.getElementById('prev').onclick = function() {
+            counter = --counter;
+            for (let i = 0; i < cards; i++) {
+                document.getElementsByClassName('card')[i].innerHTML = getCardTemplate(cards*(counter - 1) + i);
+            }
+            document.getElementById('counter').innerText = counter;
+            if (counter === 1) {
+                this.classList.add('button-round-inactive');
+                document.getElementById('first').classList.add('button-round-inactive')
+            }
+            document.getElementById('next').classList.remove('button-round-inactive');
+            document.getElementById('last').classList.remove('button-round-inactive');
+            refreshCards(counter, cards);
         }
-        document.getElementById('counter').innerText = counter;
-        this.classList.add('button-round-inactive');
-        document.getElementById('next').classList.add('button-round-inactive');
-        document.getElementById('prev').classList.remove('button-round-inactive');
-        document.getElementById('first').classList.remove('button-round-inactive');
-        refreshCards();
-    }
-
-    document.getElementById('prev').onclick = function() {
-        counter = --counter;
-        for (let i = 0; i < cards; i++) {
-            document.getElementsByClassName('card')[i].innerHTML = getCardTemplate(cards*(counter - 1) + i);
-        }
-        document.getElementById('counter').innerText = counter;
-        if (counter === 1) {
+    
+        document.getElementById('first').onclick = function() {
+            counter = 1;
+            for (let i = 0; i < cards; i++) {
+                document.getElementsByClassName('card')[i].innerHTML = getCardTemplate(cards*(counter - 1) + i);
+            }
+            document.getElementById('counter').innerText = counter;
             this.classList.add('button-round-inactive');
-            document.getElementById('first').classList.add('button-round-inactive')
+            document.getElementById('prev').classList.add('button-round-inactive');
+            document.getElementById('next').classList.remove('button-round-inactive');
+            document.getElementById('last').classList.remove('button-round-inactive');
+            refreshCards(counter, cards);
         }
-        document.getElementById('next').classList.remove('button-round-inactive');
-        document.getElementById('last').classList.remove('button-round-inactive');
-        refreshCards();
     }
 
-    document.getElementById('first').onclick = function() {
-        counter = 1;
-        for (let i = 0; i < cards; i++) {
-            document.getElementsByClassName('card')[i].innerHTML = getCardTemplate(cards*(counter - 1) + i);
-        }
-        document.getElementById('counter').innerText = counter;
-        this.classList.add('button-round-inactive');
-        document.getElementById('prev').classList.add('button-round-inactive');
-        document.getElementById('next').classList.remove('button-round-inactive');
-        document.getElementById('last').classList.remove('button-round-inactive');
-        refreshCards();
+    // carousel
+    let counter2 = 1;
+    let cards2 = 3;
+    if (width < 768) {
+        cards2 = 1;
+    } else if (width < 1280) {
+        cards2 = 2;
     }
+
+    document.getElementsByClassName('button-round-right')[0].onclick = () => {
+
+        for (let i = 0; i < cards2; i++) {
+            document.getElementsByClassName('card')[i].innerHTML = getCardTemplate(cards2*counter2 + i);
+            document.getElementsByClassName('card')[i].classList.add('fade-in-animation');
+            setTimeout(() => {
+                document.getElementsByClassName('card')[i].classList.remove('fade-in-animation')
+            },300);
+        }
+        counter2 = ++counter2;
+        if (counter2 === pets.length/cards2) {
+            counter2 = 1;
+        }
+        refreshCards(counter2, cards2)
+    }
+
+    document.getElementsByClassName('button-round-left')[0].onclick = () => {
+
+        if (counter2 === 1) {
+            counter2 = pets.length/cards2;
+        }
+
+        counter2 = --counter2;
+        for (let i = 0; i < cards2; i++) {
+            document.getElementsByClassName('card')[i].innerHTML = getCardTemplate(cards2*(counter2 - 1) + i);
+            document.getElementsByClassName('card')[i].classList.add('fade-in-animation');
+            setTimeout(() => {
+                document.getElementsByClassName('card')[i].classList.remove('fade-in-animation')
+            },300);
+        }
+        refreshCards(counter2, cards2)
+    }
+
 })();
+

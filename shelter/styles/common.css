@@ -468,6 +468,21 @@ Slider
     background: #F1CDB3;
 }
 
+@keyframes opac {
+    from 
+    {
+        opacity:0
+    } 
+    to
+    {
+        opacity:1
+    }
+}
+
+.fade-in-animation {
+    display: flex;
+    animation: opac 0.3s linear 1;
+}
 
 /*
 =============
