@@ -8,7 +8,7 @@ const rowCode2 = ['Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU',
 const rowCode3 = ['CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'Enter'];
 const rowCode4 = ['ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ArrowUp', 'ShiftRight'];
 const rowCode5 = ['ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'AltRight', 'ControlRight'];
-const serviceKeys = ['Escape', 'Backspace', 'Tab', 'CapsLock', 'Enter', 'ShiftLeft', 'ShiftRight', 'ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ControlRight', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
+const serviceKeys = ['Escape', 'Backspace', 'Tab', 'CapsLock', 'Enter', 'ShiftLeft', 'ShiftRight', 'ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ControlRight', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'Keyboard', 'keyboard-row'];
 
 var textInput = document.createElement("textarea")
 var keyboard = document.createElement("div");
@@ -54,3 +54,15 @@ document.onkeydown = function (e) {
 document.onkeyup = function (e) {
     document.querySelector("."+e.code.toLowerCase()).classList.remove("active");
 }
+
+
+window.addEventListener('click', function(e) {
+    if (!serviceKeys.find(el => el.toLowerCase() == e.target.className)) {
+        textInput.value += e.target.innerHTML;
+    } else if (e.target.className === 'backspace') {
+        e.preventDefault();
+        textInput.value = textInput.value.slice(0, -1);
+    } else if (e.target.className === 'space') {
+        textInput.value += ' ';
+    }
+});
