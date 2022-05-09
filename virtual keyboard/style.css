@@ -1,0 +1,74 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 250px;
+    background-color: beige;
+    border-radius: 5px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 7px;
+}
+
+.button {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: gray;
+}
+
+.active {
+    background-color: rgb(157, 255, 178);
+}
+
+.backspace {
+    flex-grow: 0.2;
+}
+
+.tab {
+    flex-grow: 0.13;
+}
+
+.capslock {
+    flex-grow: 0.15;
+}
+
+.enter {
+    flex-grow: 0.3;
+}
+
+.shiftleft {
+    flex-grow: 0.25;
+}
+
+.shiftright {
+    flex-grow: 0.33;
+}
+
+.space {
+    flex-grow: 0.85;
+}
