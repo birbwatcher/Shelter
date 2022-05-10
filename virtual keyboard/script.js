@@ -103,13 +103,20 @@ document.onkeydown = function (e) {
             e.preventDefault();
             textInput.value += e.key;
         }
-        if (e.key === 'Shift') {
+        if (e.key === 'Shift' && mova === false) {
             keyboard.innerHTML = '';
-            console.log('meow');
             myKeyboard(rowKeyS,rowCode);
             myKeyboardShift(rowKeyS2,rowCode2);
             myKeyboardShift(rowKeyS3,rowCode3);
             myKeyboardShift(rowKeyS4,rowCode4);
+            myKeyboard(rowKey5,rowCode5);
+        } else if (e.key === "Shift" && mova === true) {
+            console.log('meow');
+            keyboard.innerHTML = '';
+            myKeyboard(rowKeyS,rowCode);
+            myKeyboardShift(rowBel2,rowCode2);
+            myKeyboardShift(rowBel3,rowCode3);
+            myKeyboardShift(rowBel4,rowCode4);
             myKeyboard(rowKey5,rowCode5);
         }
 
@@ -126,13 +133,22 @@ document.onkeydown = function (e) {
 document.onkeyup = function (e) {
     document.querySelector("."+e.code.toLowerCase()).classList.remove("active");
 
-    if (e.key === 'Shift') {
+    if (e.key === 'Shift' && mova === false) {
         keyboard.innerHTML = '';
         console.log('meow');
         myKeyboard(rowKey,rowCode);
         myKeyboard(rowKey2,rowCode2);
         myKeyboard(rowKey3,rowCode3);
         myKeyboard(rowKey4,rowCode4);
+        myKeyboard(rowKey5,rowCode5);
+    }
+
+    if (e.key === 'Shift' && mova === true) {
+        keyboard.innerHTML = '';
+        myKeyboard(rowKeyS,rowCode);
+        myKeyboardBel(rowBel2,rowCode2);
+        myKeyboardBel(rowBel3,rowCode3);
+        myKeyboardBel(rowBel4,rowCode4);
         myKeyboard(rowKey5,rowCode5);
     }
 }
