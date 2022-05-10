@@ -13,6 +13,9 @@ const rowCode3 = ['CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'K
 const rowCode4 = ['ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ArrowUp', 'ShiftRight'];
 const rowCode5 = ['ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'AltRight', 'ControlRight'];
 const serviceKeys = ['Escape', 'Backspace', 'Tab', 'CapsLock', 'Enter', 'ShiftLeft', 'ShiftRight', 'ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ControlRight', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'Keyboard', 'keyboard-row'];
+const rowBel2 = ['Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'ў', 'з', 'х', "'", '\\'];
+const rowBel3 = ['CapsLock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter'];
+const rowBel4 = ['Shift', 'я', 'ч', 'с', 'м', 'і', 'т', 'ь', 'б', 'ю', '.', '▲', 'Shift'];
 
 var wrapper = document.createElement("div");
 wrapper.classList.add('wrapper');
@@ -32,9 +35,8 @@ wrapper.appendChild(textInput);
 wrapper.appendChild(keyboard);
 keyboard.classList.add('keyboard');
 keyboardRow.classList.add('keyboard-row');
-console.log(keyboardRow);
 
-description.innerHTML = `<p>Клавиатура создана в операционной системе Windows</p>`;
+description.innerHTML = `<p>Клавіятура створана ў аперацыйнай сістэме Windows</p><p>Для пераключэння мовы (ENG <-> BY) выкарыстоўвайце Ctrl + Alt</>`;
 wrapper.appendChild(description);
 
 
@@ -54,6 +56,14 @@ function myKeyboardShift(key, code) {
     document.querySelector('.keyboard').innerHTML += '<div class="keyboard-row">'+ row1 + '</div>';
 }
 
+function myKeyboardBel(key, code) {
+    let row1 = '';
+    for (i=0; i<key.length; i++) {
+        row1 += '<button class="'+code[i].toLowerCase()+'">' + key[i] + '</button>';
+    }
+    document.querySelector('.keyboard').innerHTML += '<div class="keyboard-row">'+ row1 + '</div>';
+}
+
 
 myKeyboard(rowKey,rowCode);
 myKeyboard(rowKey2,rowCode2);
@@ -64,8 +74,7 @@ myKeyboard(rowKey5,rowCode5);
 
 
 document.onkeydown = function (e) {
-    // rowKeyS.push(e.key);
-    // console.log(rowKeyS)
+    console.log(e);
     if (!e.repeat) {
         document.querySelector("."+e.code.toLowerCase()).classList.add("active");
         if (e.key === 'Backspace') {
@@ -83,6 +92,15 @@ document.onkeydown = function (e) {
             myKeyboardShift(rowKeyS2,rowCode2);
             myKeyboardShift(rowKeyS3,rowCode3);
             myKeyboardShift(rowKeyS4,rowCode4);
+            myKeyboard(rowKey5,rowCode5);
+        }
+
+        if (e.altKey === true && e.ctrlKey === true) {
+            keyboard.innerHTML = '';
+            myKeyboard(rowKeyS,rowCode);
+            myKeyboardBel(rowBel2,rowCode2);
+            myKeyboardBel(rowBel3,rowCode3);
+            myKeyboardBel(rowBel4,rowCode4);
             myKeyboard(rowKey5,rowCode5);
         }
     }
