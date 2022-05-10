@@ -17,6 +17,8 @@ const rowBel2 = ['Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'ў', '�
 const rowBel3 = ['CapsLock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter'];
 const rowBel4 = ['Shift', 'я', 'ч', 'с', 'м', 'і', 'т', 'ь', 'б', 'ю', '.', '▲', 'Shift'];
 
+let mova = false;
+
 var wrapper = document.createElement("div");
 wrapper.classList.add('wrapper');
 document.body.appendChild(wrapper);
@@ -72,9 +74,25 @@ myKeyboard(rowKey4,rowCode4);
 myKeyboard(rowKey5,rowCode5);
 
 
+function changeLanguage() {
+    if (mova === true) {
+    keyboard.innerHTML = '';
+    myKeyboard(rowKeyS,rowCode);
+    myKeyboardBel(rowBel2,rowCode2);
+    myKeyboardBel(rowBel3,rowCode3);
+    myKeyboardBel(rowBel4,rowCode4);
+    myKeyboard(rowKey5,rowCode5);
+    } else if (mova === false) {
+    keyboard.innerHTML = '';
+    myKeyboard(rowKey,rowCode);
+    myKeyboard(rowKey2,rowCode2);
+    myKeyboard(rowKey3,rowCode3);
+    myKeyboard(rowKey4,rowCode4);
+    myKeyboard(rowKey5,rowCode5);
+    }
+}
 
 document.onkeydown = function (e) {
-    console.log(e);
     if (!e.repeat) {
         document.querySelector("."+e.code.toLowerCase()).classList.add("active");
         if (e.key === 'Backspace') {
@@ -96,12 +114,9 @@ document.onkeydown = function (e) {
         }
 
         if (e.altKey === true && e.ctrlKey === true) {
-            keyboard.innerHTML = '';
-            myKeyboard(rowKeyS,rowCode);
-            myKeyboardBel(rowBel2,rowCode2);
-            myKeyboardBel(rowBel3,rowCode3);
-            myKeyboardBel(rowBel4,rowCode4);
-            myKeyboard(rowKey5,rowCode5);
+            mova = !mova;
+            console.log(mova)
+            changeLanguage();
         }
     }
 }
