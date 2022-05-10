@@ -59,6 +59,10 @@ button:hover {
     flex-grow: 0.2;
 }
 
+.capslock-active {
+    background: wheat;
+}
+
 .enter {
     flex-grow: 0.3;
 }

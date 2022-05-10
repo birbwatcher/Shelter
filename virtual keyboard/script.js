@@ -12,12 +12,13 @@ const rowCode2 = ['Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU',
 const rowCode3 = ['CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'Enter'];
 const rowCode4 = ['ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ArrowUp', 'ShiftRight'];
 const rowCode5 = ['ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'AltRight', 'ControlRight'];
-const serviceKeys = ['Escape', 'Backspace', 'Tab', 'CapsLock', 'Enter', 'ShiftLeft', 'ShiftRight', 'ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ControlRight', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'Keyboard', 'keyboard-row'];
+const serviceKeys = ['Escape', 'Backspace', 'Tab', 'CapsLock', 'Enter', 'ShiftLeft', 'ShiftRight', 'ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ControlRight', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'Keyboard', 'keyboard-row', 'capslock capslock-active'];
 const rowBel2 = ['Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'ў', 'з', 'х', "'", '\\'];
 const rowBel3 = ['CapsLock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter'];
 const rowBel4 = ['Shift', 'я', 'ч', 'с', 'м', 'і', 'т', 'ь', 'б', 'ю', '.', '▲', 'Shift'];
 
 let mova = false;
+let capslock = false;
 
 var wrapper = document.createElement("div");
 wrapper.classList.add('wrapper');
@@ -152,6 +153,7 @@ document.onkeyup = function (e) {
 }
 
 window.addEventListener('click', function(e) {
+    console.log(e.target.className );
     if (!serviceKeys.find(el => el.toLowerCase() == e.target.className)) {
         textInput.value += e.target.innerHTML;
     } else if (e.target.className === 'backspace') {
@@ -159,5 +161,8 @@ window.addEventListener('click', function(e) {
         textInput.value = textInput.value.slice(0, -1);
     } else if (e.target.className === 'space') {
         textInput.value +=" ";
+    } else if (e.target.className.includes('capslock')) {
+        document.querySelector(".capslock").classList.toggle("capslock-active");
+        capslock = !capslock;
     }
 });
