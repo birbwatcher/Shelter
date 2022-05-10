@@ -1,8 +1,11 @@
 const rowKey = ['Esc','`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'];
 const rowKeyS = ['Esc', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'Backspace']
 const rowKey2 = ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\'];
+const rowKeyS2 = ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '{', '}', '|'];
 const rowKey3 = ['CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter'];
+const rowKeyS3 = ['CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ':', '"', 'Enter'];
 const rowKey4 = ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '▲', 'Shift'];
+const rowKeyS4 = ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '?', '▲', 'Shift'];
 const rowKey5 = ['Ctrl', 'Win', 'Alt', ' ', '◄', '▼', '►', 'Alt', 'Ctrl']
 const rowCode = ['Escape', 'Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backspace'];
 const rowCode2 = ['Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Backslash'];
@@ -28,9 +31,8 @@ textInput.setAttribute('cols','96');
 wrapper.appendChild(textInput);
 wrapper.appendChild(keyboard);
 keyboard.classList.add('keyboard');
-keyboard.appendChild(keyboardRow);
 keyboardRow.classList.add('keyboard-row');
-
+console.log(keyboardRow);
 
 description.innerHTML = `<p>Клавиатура создана в операционной системе Windows</p>`;
 wrapper.appendChild(description);
@@ -44,6 +46,15 @@ function myKeyboard(key, code) {
     document.querySelector('.keyboard').innerHTML += '<div class="keyboard-row">'+ row1 + '</div>';
 }
 
+function myKeyboardShift(key, code) {
+    let row1 = '';
+    for (i=0; i<key.length; i++) {
+        row1 += '<button class="'+code[i].toLowerCase()+'">' + key[i].toUpperCase() + '</button>';
+    }
+    document.querySelector('.keyboard').innerHTML += '<div class="keyboard-row">'+ row1 + '</div>';
+}
+
+
 myKeyboard(rowKey,rowCode);
 myKeyboard(rowKey2,rowCode2);
 myKeyboard(rowKey3,rowCode3);
@@ -53,24 +64,44 @@ myKeyboard(rowKey5,rowCode5);
 
 
 document.onkeydown = function (e) {
-    rowKeyS.push(e.key);
-    console.log(rowKeyS)
-    document.querySelector("."+e.code.toLowerCase()).classList.add("active");
-    if (e.key === 'Backspace') {
-        e.preventDefault();
-        textInput.value = textInput.value.slice(0, -1);
-    }
-    if (!serviceKeys.includes(e.code)) {
-        e.preventDefault();
-        textInput.value += e.key;
-    }
-    if (e.key === 'Shift') {
-        console.log('meow');
+    // rowKeyS.push(e.key);
+    // console.log(rowKeyS)
+    if (!e.repeat) {
+        document.querySelector("."+e.code.toLowerCase()).classList.add("active");
+        if (e.key === 'Backspace') {
+            e.preventDefault();
+            textInput.value = textInput.value.slice(0, -1);
+        }
+        if (!serviceKeys.includes(e.code)) {
+            e.preventDefault();
+            textInput.value += e.key;
+        }
+        if (e.key === 'Shift') {
+            keyboard.innerHTML = '';
+            console.log('meow');
+            myKeyboard(rowKeyS,rowCode);
+            myKeyboardShift(rowKeyS2,rowCode2);
+            myKeyboardShift(rowKeyS3,rowCode3);
+            myKeyboardShift(rowKeyS4,rowCode4);
+            myKeyboard(rowKey5,rowCode5);
+        }
     }
 }
 
+
+
 document.onkeyup = function (e) {
     document.querySelector("."+e.code.toLowerCase()).classList.remove("active");
+
+    if (e.key === 'Shift') {
+        keyboard.innerHTML = '';
+        console.log('meow');
+        myKeyboard(rowKey,rowCode);
+        myKeyboard(rowKey2,rowCode2);
+        myKeyboard(rowKey3,rowCode3);
+        myKeyboard(rowKey4,rowCode4);
+        myKeyboard(rowKey5,rowCode5);
+    }
 }
 
 window.addEventListener('click', function(e) {
