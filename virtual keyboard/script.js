@@ -1,4 +1,5 @@
 const rowKey = ['Esc','`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'];
+const rowKeyS = ['Esc', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'Backspace']
 const rowKey2 = ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\'];
 const rowKey3 = ['CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter'];
 const rowKey4 = ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '▲', 'Shift'];
@@ -10,18 +11,29 @@ const rowCode4 = ['ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', '
 const rowCode5 = ['ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'AltRight', 'ControlRight'];
 const serviceKeys = ['Escape', 'Backspace', 'Tab', 'CapsLock', 'Enter', 'ShiftLeft', 'ShiftRight', 'ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ControlRight', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'Keyboard', 'keyboard-row'];
 
+var wrapper = document.createElement("div");
+wrapper.classList.add('wrapper');
+document.body.appendChild(wrapper);
+
 var textInput = document.createElement("textarea")
 var keyboard = document.createElement("div");
 var keyboardRow = document.createElement("div");
+var description = document.createElement('div');
 textInput.setAttribute('rows','10');
 textInput.setAttribute('cols','96');
 
 
-document.body.appendChild(textInput);
-document.body.appendChild(keyboard);
+// document.body.appendChild(textInput);
+// document.body.appendChild(keyboard);
+wrapper.appendChild(textInput);
+wrapper.appendChild(keyboard);
 keyboard.classList.add('keyboard');
 keyboard.appendChild(keyboardRow);
 keyboardRow.classList.add('keyboard-row');
+
+
+description.innerHTML = `<p>Клавиатура создана в операционной системе Windows</p>`;
+wrapper.appendChild(description);
 
 
 function myKeyboard(key, code) {
@@ -38,8 +50,11 @@ myKeyboard(rowKey3,rowCode3);
 myKeyboard(rowKey4,rowCode4);
 myKeyboard(rowKey5,rowCode5);
 
+
+
 document.onkeydown = function (e) {
-    console.log(e.code);
+    rowKeyS.push(e.key);
+    console.log(rowKeyS)
     document.querySelector("."+e.code.toLowerCase()).classList.add("active");
     if (e.key === 'Backspace') {
         e.preventDefault();
