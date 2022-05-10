@@ -49,12 +49,14 @@ document.onkeydown = function (e) {
         e.preventDefault();
         textInput.value += e.key;
     }
+    if (e.key === 'Shift') {
+        console.log('meow');
+    }
 }
 
 document.onkeyup = function (e) {
     document.querySelector("."+e.code.toLowerCase()).classList.remove("active");
 }
-
 
 window.addEventListener('click', function(e) {
     if (!serviceKeys.find(el => el.toLowerCase() == e.target.className)) {
@@ -63,6 +65,6 @@ window.addEventListener('click', function(e) {
         e.preventDefault();
         textInput.value = textInput.value.slice(0, -1);
     } else if (e.target.className === 'space') {
-        textInput.value += ' ';
+        textInput.value +=" ";
     }
 });
