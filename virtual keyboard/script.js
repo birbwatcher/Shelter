@@ -77,7 +77,7 @@ myKeyboard(rowKey5,rowCode5);
 function changeLanguage() {
     if (mova === true) {
     keyboard.innerHTML = '';
-    myKeyboard(rowKeyS,rowCode);
+    myKeyboard(rowKey,rowCode);
     myKeyboardBel(rowBel2,rowCode2);
     myKeyboardBel(rowBel3,rowCode3);
     myKeyboardBel(rowBel4,rowCode4);
@@ -143,7 +143,7 @@ document.onkeyup = function (e) {
 
     if (e.key === 'Shift' && mova === true) {
         keyboard.innerHTML = '';
-        myKeyboard(rowKeyS,rowCode);
+        myKeyboard(rowKey,rowCode);
         myKeyboardBel(rowBel2,rowCode2);
         myKeyboardBel(rowBel3,rowCode3);
         myKeyboardBel(rowBel4,rowCode4);
