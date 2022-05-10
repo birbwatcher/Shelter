@@ -38,7 +38,7 @@ wrapper.appendChild(keyboard);
 keyboard.classList.add('keyboard');
 keyboardRow.classList.add('keyboard-row');
 
-description.innerHTML = `<p>Клавіятура створана ў аперацыйнай сістэме Windows</p><p>Для пераключэння мовы (ENG <-> BY) выкарыстоўвайце Shift + Alt</>`;
+description.innerHTML = `<p>Клавіятура створана ў аперацыйнай сістэме Windows</p><p>Для пераключэння мовы (ENG <-> BY) выкарыстоўвайце Shift + Alt</><p>If suddenly the keys do not match, make sure that you have BY language in your system;)</p>`;
 wrapper.appendChild(description);
 
 
