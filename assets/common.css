@@ -1,0 +1,44 @@
+.button {
+    padding-left: 45px;
+    padding-right: 45px;
+    background-color: transparent;
+    height: 52px;
+    cursor: pointer;
+    border: none;
+    border-radius: 100px;
+    font-family: 'Georgia';
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+.primary {
+    background: #F1CDB3;
+    color: #292929;
+}
+
+.secondary {
+    border: 2px solid #F1CDB3;
+
+}
+
+.button:hover,
+.button.primary:hover {
+    background: #FDDCC4;
+}
+
+
+.button-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    background-color: transparent;
+}
+
+.button-arrow:hover {
+    background: #F1CDB3;
+}
