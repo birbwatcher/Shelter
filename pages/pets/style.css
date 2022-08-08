@@ -1,0 +1,12 @@
+
+.start-screen {
+    width: 1280px;
+    height: 100vh;
+    background: url(../../assets/images/start-screen-gradient-background.png);
+    background-color: red;
+    
+}
+
+.wrapper {
+    width: 1200px;
+}

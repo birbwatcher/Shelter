@@ -1,0 +1,78 @@
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* ================
+Start Screen
+================ */
+
+.start-screen {
+    background: url(../../assets/images/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) #211F20;
+    background: url(../../assets/images/start-screen-gradient-background.png) center/cover;
+}
+
+
+/* ================
+Header
+================ */
+
+
+header {
+    display: flex;
+    padding: 60px 0px 0;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    text-decoration: none;
+}
+
+.logo-subtitle {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* ================
+Main Menu
+================ */
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li{
+    margin-left: 36px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #CDCDCD;
+}
+
+.nav-menu .active{
+    color: #FAFAFA;
+    border-bottom: 3px solid #F1CDB3;
+}
