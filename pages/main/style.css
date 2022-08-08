@@ -194,6 +194,35 @@ Our friends
 }
 
 /* ================
+Help
+================ */
+.help {
+    background-color: white;
+}
+
+.help-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.help-content h2{
+    margin-bottom: 60px;
+}
+
+.icons-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 119px;
+    grid-row-gap: 33px;
+}
+
+
+/* ================
 Slider
 ================ */
 
