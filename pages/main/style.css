@@ -126,7 +126,7 @@ Main Menu
 Start Screen
 ================ */
 
-.start-screen {
+.start-screen, footer {
     background: url(../../assets/images/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) #211F20;
     background: url(../../assets/images/start-screen-gradient-background.png) center/cover;
 }
@@ -248,7 +248,7 @@ Donation
 .donation {
     background: #F6F6F6;
     padding-top: 80px;
-    padding-bottom: 88px;
+    padding-bottom: 87px;
 }
 
 .donation-content {
@@ -301,6 +301,56 @@ Donation
     line-height: 18px;
     color: #B2B2B2;
     margin-top: 20px;
+}
+
+/* ================
+Footer
+================ */
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 161px;
+    padding-top: 27px;
+}
+
+
+.boston, .london, .phone, .email {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 20px;
+}
+
+footer h2 {
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+
+footer h4 {
+    color: #F1CDB3;
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-puppy {
+    padding-top: 40px;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+
+.footer-locations {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 /* ================
