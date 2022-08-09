@@ -14,7 +14,7 @@ p {
     line-height: 160%;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
     font-family: 'Georgia';
     font-weight: 400;
     line-height: 130%;
@@ -39,6 +39,18 @@ h3 {
     line-height: 23px;
     letter-spacing: 0.06em;
     margin-top: 26px;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+h5 {
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
 }
 
 
@@ -206,7 +218,7 @@ Help
     align-items: center;
     text-align: center;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 81px;
 }
 
 .help-content h2{
@@ -221,6 +233,75 @@ Help
     grid-row-gap: 33px;
 }
 
+/* ================
+Donation
+================ */
+.donation h2{
+    margin-bottom: 19px;
+}
+
+.donation h5{
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.donation {
+    background: #F6F6F6;
+    padding-top: 80px;
+    padding-bottom: 88px;
+}
+
+.donation-content {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.donation-block {
+    width: 380px;
+}
+
+.donation-block h2{
+    margin-top: 0;
+}
+
+.donation-dog {
+    margin-top: 10px;
+}
+
+.credit-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 349px;
+    height: 43px;
+    background: #F1CDB3;
+    border-radius: 9px;
+    border: none;
+}
+
+.credit-card-icon {
+    height: 23px;
+}
+
+.credit-card:hover {
+    cursor: pointer;
+    background: #FDDCC4;
+}
+
+.credit-card h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.legal-information {
+    font-style: italic;
+    font-size: 12px;
+    line-height: 18px;
+    color: #B2B2B2;
+    margin-top: 20px;
+}
 
 /* ================
 Slider
