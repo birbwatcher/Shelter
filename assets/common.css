@@ -100,14 +100,24 @@ h5 {
 .button-round-inactive {
     border: 2px solid #CDCDCD;
     color: #CDCDCD;
-}
-
-.button-round-active {
-    background-color: #F1CDB3;
+    cursor: default;
 }
 
 .button-round:hover {
     background: #F1CDB3;
+}
+
+.button-round h4 {
+    margin: 2px 0 4px 2px;
+}
+
+.button-round-inactive:hover {
+    background-color: transparent;
+}
+
+.button-round-active {
+    background-color: #F1CDB3;
+    cursor: default;
 }
 
 .card {
