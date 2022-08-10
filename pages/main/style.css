@@ -44,7 +44,7 @@ Start Screen
 
 .content .content-box {
     margin-top: 134px;
-    width: 460px;
+    width: 39%;
 }
 
 .content-box p{
@@ -54,6 +54,12 @@ Start Screen
 
 .puppy {
     display: flex;
+    /* justify-content: flex-end; */
+}
+
+.puppy img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .start-screen .button-primary{
@@ -67,13 +73,13 @@ About
 .row-about {
     display: flex;
     justify-content: center;
-    gap: 120px;
+    gap: 10%;
     margin-top: 80px;
     margin-bottom: 90px;
 }
 
 .about-content {
-    width: 430px;
+    width: 35.8%;
 }
 
 .about h2{
@@ -220,6 +226,7 @@ Slider
     justify-content: space-between;
     align-items: center;
     margin-bottom: 61px;
+    gap: 52px;
 }
 
 .slides {
@@ -227,5 +234,96 @@ Slider
     gap: 90px;
 }
 
+/*==================
+768px <= width < 1280px
+==================*/
+
+@media screen and (max-width: 1279.9px) and (min-width: 768px) {
+
+.wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.start-screen .content, .row-about, .donation-content{
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    padding: 30px;
+}
+
+.content .content-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    width: 65%;
+    margin-bottom: 103px;
+}
+
+.content-box p{
+    margin-top: 0;
+}
+
+.start-screen .primary {
+    align-self: center;
+    width: 208px;
+}
+
+.puppy {
+    width: 80%;
+    align-self: flex-end;
+}
+
+.row-about {
+    flex-direction: column-reverse;
+    margin-top: 66px;
+    margin-bottom: 96px;
+}
+
+.card:nth-child(3) {
+    display: none;
+}
+
+.about-content {
+    width: 60.8%;
+}
+
+.about-pets {
+    margin-top: 57px;
+}
+
+.slider {
+    gap: 11px;
+}
+
+.slides {
+    gap: 41px;
+}
+
+.help-content h2{
+    margin-bottom: 57px;
+}
+
+.icons-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px;
+    row-gap: 35px;
+}
+
+.donation {
+    padding-bottom: 96px;
+}
+
+.donation-content {
+    flex-direction: column-reverse;
+    gap: 37px;
+}
+
+
+
+}
 
 

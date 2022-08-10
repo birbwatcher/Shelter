@@ -64,3 +64,27 @@ header .wrapper {
 .nav-menu li:hover {
     color: #292929;
 }
+
+
+@media screen and (max-width: 1279.9px) and (min-width: 768px) {
+
+.cards-container{
+    justify-content: center;
+    margin-bottom: 23px;
+    row-gap: 30px;
+    column-gap: 38px;
+}
+
+.our-pets-content h2 {
+    margin-bottom: 27px;
+}
+
+.card:nth-child(n+7) {
+    display: none;
+}
+
+.navigation {
+    margin-bottom: 77px;
+}
+
+}
