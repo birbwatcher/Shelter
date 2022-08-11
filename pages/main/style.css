@@ -506,6 +506,10 @@ header {
     .donation-dog img{
         width: 93%;
     }
+
+    .line {
+        border: 1px solid #F1CDB3;
+    }
 }
 
 

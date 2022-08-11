@@ -126,4 +126,8 @@ header .wrapper {
         margin-top: 14px;
     }
 
+    .line {
+        border: 1px solid #000000;
+    }
+
 }

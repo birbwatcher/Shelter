@@ -352,11 +352,25 @@ footer .wrapper {
         padding-right: 10px;
     }
 
-    nav {
+    .nav-menu {
         display: none;
     }
 
     footer h2 {
         text-align: center;
     }
+
+    .burger {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        justify-content: center;
+        padding-right: 42px;;
+    }
+
+    .line {
+        width: 28px;
+        height: 0;
+    }
+
 }
