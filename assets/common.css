@@ -281,3 +281,48 @@ footer .wrapper {
 }
 
 }
+
+
+@media screen and (max-width: 767.9px) {
+    
+    .footer-content, footer .wrapper {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        padding-top: 8px;
+        gap: 36px;
+    }
+
+    .footer-contacts {
+        align-items: center;
+    }
+
+    footer h2 {
+        width: 100%;
+    }
+
+    footer .wrapper {
+        align-items: center;
+    }
+
+    .footer-locations h2 {
+        width: 240px;
+        margin: 0 auto;
+    }
+
+    .footer-locations {
+        gap: 39px;
+    }
+
+    .footer-puppy {
+        display: flex;
+        justify-content: center;
+        padding-top: 38px;
+    }
+
+    .footer-puppy img {
+        width: 86%;
+    }
+
+}

@@ -234,6 +234,10 @@ Slider
     gap: 90px;
 }
 
+footer h2{
+    width: 279px;
+}
+
 /*==================
 768px <= width < 1280px
 ==================*/
@@ -323,7 +327,199 @@ header {
 }
 
 
+}
 
+@media screen and (max-width: 767.9px) {
+
+    header {
+        padding: 30px 0;
+    }
+
+    nav {
+        display: none;
+    }
+
+    h1, h2 {
+        font-size: 25px;
+        letter-spacing: 0.06em;
+    }
+
+    h1 {
+        width: 70%;
+        margin: 30px auto 41px;
+    }
+
+    h2, .content .content-box, .bank-name  {
+        text-align: center;
+    }
+
+    .start-screen .content, .row-about, .our-friends .wrapper, .donation-dog, .slides{
+        flex-direction: column;
+    }
+
+    .content .content-box {
+        margin-top: 0;
+        margin-bottom: 105px;
+    }
+
+    .puppy {
+        width: 87%;
+        align-self: flex-end;
+    }
+
+    .row-about {
+        margin-top: 26px;
+        margin-bottom: 44px;
+    }
+
+    .about h2 {
+        margin-bottom: 24px;
+    }
+
+    .about-pets, .donation-dog {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-pets img {
+        width: 95%;
+        max-width: 100%;
+    }
+
+    .about-content {
+        padding-bottom: 17px;
+    }
+
+    .row-about.wrapper {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .our-friends {
+        padding-top: 20px;
+    }
+
+    .our-friends .wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .our-friends h2 {
+        margin-bottom: 41px;
+    } 
+
+    .slider {
+        width: 270px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 0;
+        margin-bottom: 41px;
+    }
+
+    .slides {
+        order: 1;
+    }
+
+    .button-round {
+        order: 2;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card:not(:first-child) {
+        display: none;
+    }
+
+    .our-friends .button.primary {
+        margin-bottom: 43px;
+    }
+
+    .help-content {
+        margin-top: 21px;
+    }
+
+    .icons-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        row-gap: 13px;
+        column-gap: 36px
+    }
+
+    .icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon h3 {
+        font-size: 15px;
+        margin-top: 12px;
+    }
+
+    .help-content {
+        margin-bottom: 23px;
+    }
+
+    .help-content h2 {
+        margin-bottom: 42px;
+    }
+
+    .donation {
+        padding-top: 42px;
+    }
+
+    .donation .wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .donation-content, .row-about, .donation-content, .row-about {
+        flex-direction: column-reverse;
+        gap: 31px;
+    }
+
+    .donation-block, .credit-card, .content .content-box, .about-content, .legal-information {
+        width: 100%;
+    }
+
+    .donation {
+        padding-bottom: 44px;
+    }
+
+    .donation h2, .donation h5{
+        margin-bottom: 23px;
+    }
+
+    .donation-dog {
+        align-items: center;
+    }
+
+    .donation-content, .row-about {
+        gap: 0;
+    }
+
+    .donation-block {
+        margin-bottom: 20px;
+    }
+
+    .bank-name {
+        letter-spacing: 0;
+    }
+
+    .legal-information, .row-about {
+        text-align: justify;
+    }
+
+    .credit-card h4 {
+        font-size: 15px;
+    }
+
+    .donation-dog img{
+        width: 93%;
+    }
 }
 
 
