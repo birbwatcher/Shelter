@@ -51,6 +51,10 @@ h5 {
     letter-spacing: 0.06em;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* ============ */
 
 .button {
