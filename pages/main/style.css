@@ -1,6 +1,5 @@
 /* Header */
 
-
 .logo-title {
     color: #F1CDB3;
 }
@@ -234,20 +233,11 @@ Slider
     gap: 90px;
 }
 
-footer h2{
-    width: 279px;
-}
-
 /*==================
 768px <= width < 1280px
 ==================*/
 
 @media screen and (max-width: 1279.9px) and (min-width: 768px) {
-
-.wrapper {
-    padding-left: 30px;
-    padding-right: 30px;
-}
 
 .start-screen .content, .row-about, .donation-content{
     flex-direction: column;
@@ -333,10 +323,6 @@ header {
 
     header {
         padding: 30px 0;
-    }
-
-    nav {
-        display: none;
     }
 
     h1, h2 {

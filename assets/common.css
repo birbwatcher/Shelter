@@ -1,12 +1,8 @@
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.body {
-
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 p {
@@ -189,6 +185,10 @@ footer .wrapper {
     gap: 32px;
 }
 
+footer h2{
+    width: 279px;
+}
+
 footer {
     background: url(../../assets/images/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) #211F20;
     background: url(../assets/images/start-screen-gradient-background.png) center/cover;
@@ -260,6 +260,11 @@ Main Menu
 
 @media screen and (max-width: 1279.9px) and (min-width: 768px) {
 
+/* .wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+} */
+
 footer .wrapper {
     flex-direction: column;
     align-items: center;
@@ -284,7 +289,7 @@ footer .wrapper {
 
 
 @media screen and (max-width: 767.9px) {
-    
+
     .footer-content, footer .wrapper {
         flex-direction: column;
     }
@@ -296,10 +301,17 @@ footer .wrapper {
 
     .footer-contacts {
         align-items: center;
+        gap: 0;
     }
 
     footer h2 {
-        width: 100%;
+        /* width: 100%; */
+        margin-bottom: 38px;
+        padding: 0 12px;
+    }
+
+    .email {
+        margin-bottom: 36px;
     }
 
     footer .wrapper {
@@ -307,7 +319,6 @@ footer .wrapper {
     }
 
     .footer-locations h2 {
-        width: 240px;
         margin: 0 auto;
     }
 
@@ -325,4 +336,23 @@ footer .wrapper {
         width: 86%;
     }
 
+
+
+}
+
+
+@media screen and (max-width: 767.9px) {
+
+    .wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    footer h2 {
+        text-align: center;
+    }
 }
