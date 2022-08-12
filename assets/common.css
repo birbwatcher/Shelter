@@ -23,7 +23,7 @@ h1 {
     font-size: 44px;
     color: #FFFFFF;
     width: 310px;
-    margin-bottom: 41px;
+    margin-bottom: 42px;
 }
 
 h2 {
@@ -62,10 +62,9 @@ a {
 /* ============ */
 
 .button {
-    padding-left: 45px;
-    padding-right: 45px;
+    display: inline-block;
+    padding: 14px 43px;
     background-color: transparent;
-    height: 52px;
     cursor: pointer;
     border: none;
     border-radius: 100px;
@@ -78,6 +77,8 @@ a {
 .primary {
     background: #F1CDB3;
     color: #292929;
+    padding-bottom: 15px;
+    padding-top: 15px;
 }
 
 .secondary {
@@ -149,8 +150,8 @@ Footer
 .footer-content {
     display: flex;
     justify-content: space-around;
-    gap: 161px;
-    padding-top: 27px;
+    gap: 160px;
+    padding-top: 28px;
 }
 
 
@@ -286,7 +287,15 @@ footer .wrapper {
 .footer-content {
     gap: 61px;
     padding-right: 7px;
-    padding-top: 30px;
+    padding-top: 31px;
+}
+
+.footer-contacts {
+    gap: 35px;
+}
+
+.email-icon {
+    padding: 1px 0;
 }
 
 .footer-puppy {
@@ -331,7 +340,7 @@ footer .wrapper {
     }
 
     .footer-locations {
-        gap: 39px;
+        gap: 38px;
     }
 
     .footer-puppy {
