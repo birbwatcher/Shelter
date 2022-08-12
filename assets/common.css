@@ -55,6 +55,10 @@ a {
     text-decoration: none;
 }
 
+.burger {
+    display: none;
+}
+
 /* ============ */
 
 .button {
@@ -361,11 +365,13 @@ footer .wrapper {
     }
 
     .burger {
+        position: absolute;
+        right: 53px;
+        top: 49px;
         display: flex;
         flex-direction: column;
         gap: 8px;
         justify-content: center;
-        padding-right: 42px;;
     }
 
     .line {
