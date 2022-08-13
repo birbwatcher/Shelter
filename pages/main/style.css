@@ -550,6 +550,16 @@ h1 {
     .line {
         border: 1px solid #F1CDB3;
     }
+
+    .mobile-menu {
+        background-color: #292929;
+    }
+
+    .mobile-menu li {
+        color: #FAFAFA;
+    }
+
+
 }
 
 

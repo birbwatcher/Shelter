@@ -91,6 +91,13 @@ header .wrapper {
 
 
 @media screen and (max-width: 767.9px) {
+    header {
+        z-index: 0;
+    }
+
+    .blackout {
+        z-index: 1;
+    }
 
     h1, h2 {
         font-size: 25px;
@@ -128,6 +135,18 @@ header .wrapper {
 
     .line {
         border: 1px solid #000000;
+    }
+
+    .mobile-menu {
+        background-color: #FAFAFA;
+    }
+
+    .mobile-menu li {
+        color: #292929;;
+    }
+
+    .burger {
+        z-index: 10;
     }
 
 }
