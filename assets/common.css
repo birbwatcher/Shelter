@@ -566,5 +566,52 @@ footer .wrapper {
     .mobile-menu li.active{
         border-bottom: 3px solid #F1CDB3;
     }
-        
+
+    .modal-window {
+        width: 271px;
+        transform: translate(-44%, -38%);
+    }
+
+    .modal-close-button {
+        margin-right: 0px;
+    }
+
+    .pet-popup-image {
+        display: none;
+    }
+
+    .pet-popup {
+        width: 240px;
+    }
+
+    .pet-popup-content {
+        padding: 10px 10px 0px 10px;
+        text-align: justify;
+    }
+    
+    .pet-popup-content h2{
+        margin-top: 3px;
+        font-size: 35px;
+    }
+
+    .pet-popup-content h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .pet-popup-content h5 {
+        font-size: 13px;
+        line-height: 14.5px;
+    }
+
+    .pet-deseases h5 {
+        font-size: 15px;
+        margin-bottom: 7px;
+    }
+
+    .pet-deseases ul {
+        padding-top: 0px;
+        margin-bottom: 0px;
+    }
+ 
 }
