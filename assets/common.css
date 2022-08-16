@@ -62,8 +62,7 @@ a {
 }
 
 .burger,.mobile-menu {
-    /* display: none; */
-    /* display: flex; */
+    display: none;
 }
 
 .rotate {
