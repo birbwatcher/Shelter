@@ -143,6 +143,7 @@ header .wrapper {
 
     .mobile-menu {
         background-color: #FAFAFA;
+        z-index: 1;
     }
 
     .mobile-menu li {

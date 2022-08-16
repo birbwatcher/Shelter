@@ -62,16 +62,24 @@ a {
 }
 
 .burger,.mobile-menu {
-    display: none;
+    /* display: none; */
+    /* display: flex; */
+}
+
+.rotate {
+    transform: rotate(-90deg);
+    transition-duration: 0.5s;
 }
 
 
 .blackout {
+    display: none;
     position: fixed;
     width: 100vw;
     height: 100vh;
     background-color: #2929299a;
 }
+
 
 /* ============ */
 
@@ -157,6 +165,9 @@ a {
     background: #FDDCC4;
 }
 
+.noscroll {
+    overflow: hidden;
+}
 
 /* ================
 Footer
@@ -280,7 +291,7 @@ Modal Window
 =====================*/
 
 .modal-window {
-    display: flex;
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 50%;
@@ -512,6 +523,8 @@ footer .wrapper {
         flex-direction: column;
         gap: 8px;
         justify-content: center;
+        cursor: pointer;
+        transition: 0.5s
     }
 
     .line {
@@ -527,14 +540,22 @@ footer .wrapper {
     } */
 
     .mobile-menu {
-        /* display: flex; */
-        display: none;
+        display: flex;
         flex-direction: column;
         position: fixed;
         top: 0;
-        right: 0;
+        right: -320px;
         width: 320px;
         height: 100vh;
+        transition: right 0.5s;
+    }
+
+    .show {
+        right: 0px;
+    }
+
+    .modal-active {
+        display: flex;
     }
 
     .mobile-menu .logo {
