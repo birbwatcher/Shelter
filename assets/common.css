@@ -5,6 +5,12 @@
     padding-right: 30px;
 }
 
+
+
+body {
+    min-width: 320px;
+}
+
 p {
     font-weight: 400;
     font-family: 'Arial';
@@ -500,7 +506,6 @@ footer .wrapper {
     }
 
     .burger {
-        position: fixed;
         right: 53px;
         top: 49px;
         display: flex;

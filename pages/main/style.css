@@ -368,6 +368,10 @@ h1 {
         margin: 29px auto 41px;
     }
 
+    .burger {
+        position: absolute;
+    }
+
     h2, .content .content-box, .bank-name  {
         text-align: center;
     }

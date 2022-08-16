@@ -104,6 +104,10 @@ header .wrapper {
         letter-spacing: 0.06em;
     }
 
+    .burger {
+        position: fixed;
+    }
+
     .our-pets-content {
         padding-top: 141px;
     }
