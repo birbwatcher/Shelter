@@ -80,6 +80,8 @@ a {
 }
 
 
+
+
 /* ============ */
 
 .button {
@@ -292,12 +294,14 @@ Modal Window
 .modal-window {
     display: none;
     flex-direction: column;
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 952px;
-    height: 552px;
+    width: 900px;
+    /* height: 552px; */
+    z-index: 2;
 }
 
 .pet-popup {
@@ -313,13 +317,20 @@ Modal Window
     justify-content: center;
     align-items: center;
     align-self: flex-end;
+    position: absolute;
     width: 52px;
     height: 52px;
     border: 2px solid #F1CDB3;
     border-radius: 100px;
     background-color: transparent;
     cursor: pointer;
-    margin-right: 10px;
+    top: -45px;
+    right: -45px;
+}
+
+.blackout:hover + .modal-window .modal-close-button {
+    background-color: #F1CDB3;
+    cursor: pointer;
 }
 
 .modal-close-button:hover {
@@ -329,7 +340,7 @@ Modal Window
 .pet-popup-image img{
     width: 500px;
     height: 500px;
-    border-radius: 100px;
+    border-radius: 10px;
 }
 
 .pet-popup ul{
@@ -368,6 +379,11 @@ Modal Window
     margin-top: 0px;
     margin-bottom: 10px;
 }
+
+.modal-active {
+    display: flex;
+}
+
 
 /*==================
 768px <= width < 1280px
@@ -409,7 +425,7 @@ footer .wrapper {
 }
 
 .modal-window {
-    width: 682px;
+    width: 630px;
     transform: translate(-46%, -49%);
 }
 
@@ -530,13 +546,6 @@ footer .wrapper {
         width: 28px;
         height: 0;
     }
-/* 
-    .blackout {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        background-color: #2929299a;
-    } */
 
     .mobile-menu {
         display: flex;
@@ -551,10 +560,6 @@ footer .wrapper {
 
     .show {
         right: 0px;
-    }
-
-    .modal-active {
-        display: flex;
     }
 
     .mobile-menu .logo {
@@ -593,7 +598,7 @@ footer .wrapper {
     }
 
     .modal-window {
-        width: 271px;
+        width: 240px;
         transform: translate(-44%, -38%);
     }
 
