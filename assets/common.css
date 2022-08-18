@@ -329,8 +329,8 @@ Modal Window
 }
 
 .blackout:hover + .modal-window .modal-close-button {
-    background-color: #F1CDB3;
     cursor: pointer;
+    background-color: #F1CDB3;
 }
 
 .modal-close-button:hover {

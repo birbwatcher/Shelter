@@ -1,27 +1,31 @@
 let burger = document.querySelector('.burger');
 let blackout = document.querySelector('.blackout');
 let cards = document.querySelectorAll('.card');
+let modalCloseButton = document.querySelector('.modal-close-button');
+let modalWindow = document.querySelector('.modal-window');
 
 burger.onclick = menuOpenClose;
 blackout.onclick = function() {
-    console.log(this)
-    document.querySelector('.blackout').classList.remove('modal-active');
+    blackout.classList.remove('modal-active');
     document.body.classList.remove('noscroll');
     document.querySelector('.mobile-menu').classList.remove('show');
-    document.querySelector('.modal-window').classList.remove('modal-active');
+    modalWindow.classList.remove('modal-active');
     burger.classList.remove('rotate');
 };
 
+modalCloseButton.onclick = function () {
+        blackout.classList.remove('modal-active');
+        document.body.classList.remove('noscroll');
+        modalWindow.classList.toggle('modal-active');
+}
 
 function getModal() {
-    document.querySelector('.blackout').classList.add('modal-active');
+    blackout.classList.add('modal-active');
     document.body.classList.add('noscroll');
-
-
 }
 
 function menuOpenClose() {
-    document.querySelector('.blackout').classList.toggle('modal-active');
+    blackout.classList.toggle('modal-active');
     document.body.classList.toggle('noscroll');
     burger.classList.toggle('rotate');
     document.querySelector('.mobile-menu').classList.toggle('show');
@@ -40,7 +44,7 @@ getCard();
 
 function getPopup() {
     getModal();
-    document.querySelector('.modal-window').classList.toggle('modal-active');
+    modalWindow.classList.toggle('modal-active');
 }
 
 function updateCard(i) {
@@ -68,7 +72,6 @@ function updateCard(i) {
 function cardClick() {
     for (i=0;i<cards.length;i++) {
         cards[i].onclick = function () {
-            console.log(this.id)
             getPopup();
             updateCard(this.id);
         }
@@ -78,6 +81,14 @@ function cardClick() {
 cardClick();
 
 
+// document.body.onclick = function(e) {
+//     console.log(e)
+//     if (e.target.className === "modal-close-button") {
+//         document.querySelector('.blackout').classList.remove('modal-active');
+//         document.body.classList.remove('noscroll');
+//         document.querySelector('.modal-window').classList.toggle('modal-active');
+//     }
+// }
 
 
 
