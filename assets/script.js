@@ -3,6 +3,19 @@ let blackout = document.querySelector('.blackout');
 let cards = document.querySelectorAll('.card');
 let modalCloseButton = document.querySelector('.modal-close-button');
 let modalWindow = document.querySelector('.modal-window');
+let pageButtons = document.querySelectorAll('.button-round');
+let pageCounter = 1;
+
+function getWindowResolution() {
+    if (window.screen.width < 768) {
+        return 16;
+    } else if (window.screen.width < 1280 && window.screen.width >= 768) {
+        return 8;
+    } else if (window.screen.width >= 1280) {
+        return 6;
+    }
+}
+
 
 burger.onclick = menuOpenClose;
 blackout.onclick = function() {
@@ -81,17 +94,37 @@ function cardClick() {
 cardClick();
 
 
-// document.body.onclick = function(e) {
-//     console.log(e)
-//     if (e.target.className === "modal-close-button") {
-//         document.querySelector('.blackout').classList.remove('modal-active');
-//         document.body.classList.remove('noscroll');
-//         document.querySelector('.modal-window').classList.toggle('modal-active');
-//     }
-// }
+function getPageNumber() {
+    for (i=0;i<pageButtons.length;i++) {
+        pageButtons[i].onclick = function () {
+            if (this.id === 'go-next' && pageCounter < getWindowResolution()) {
+                pageCounter += 1;
+            }  else if (this.id === 'go-previous' && pageCounter > 1) {
+                pageCounter -= 1;
+            } else if (this.id === 'go-first-page') {
+                pageCounter = 1;
+            } else if (this.id === 'go-last-page') {
+                pageCounter = getWindowResolution();
+            }
+            document.getElementById('actual-page').innerHTML = `<h4>${pageCounter}</h4>`;
+            if (pageCounter > 1) {
+                document.getElementById('go-first-page').classList.remove('button-round-inactive')
+                document.getElementById('go-previous').classList.remove('button-round-inactive')
+            } 
+            if (pageCounter === 1) {
+                document.getElementById('go-first-page').classList.add('button-round-inactive')
+                document.getElementById('go-previous').classList.add('button-round-inactive')
+            } 
+            if (pageCounter === getWindowResolution()) {
+                document.getElementById('go-last-page').classList.add('button-round-inactive')
+                document.getElementById('go-next').classList.add('button-round-inactive')
+            } 
+            if (pageCounter < getWindowResolution()) {
+                document.getElementById('go-last-page').classList.remove('button-round-inactive')
+                document.getElementById('go-next').classList.remove('button-round-inactive')
+            }
+        }
+    }
+}
 
-
-
-
-
-
+getPageNumber()
