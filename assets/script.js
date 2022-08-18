@@ -8,7 +8,7 @@ let sliderButtons = document.querySelectorAll('.slider-button');
 let pageCounter = 1;
 
 
-function getWindowResolution() {
+function pageCardCount() {
     if (window.screen.width < 768) {
         return 16;
     } else if (window.screen.width < 1280 && window.screen.width >= 768) {
@@ -107,7 +107,7 @@ function getPageNumber() {
             } else if (this.id === 'go-first-page') {
                 pageCounter = 1;
             } else if (this.id === 'go-last-page') {
-                pageCounter = getWindowResolution();
+                pageCounter = pageCardCount();
             }
             document.getElementById('actual-page').innerHTML = `<h4>${pageCounter}</h4>`;
             if (pageCounter > 1) {
@@ -118,11 +118,11 @@ function getPageNumber() {
                 document.getElementById('go-first-page').classList.add('button-round-inactive')
                 document.getElementById('go-previous').classList.add('button-round-inactive')
             } 
-            if (pageCounter === getWindowResolution()) {
+            if (pageCounter === pageCardCount()) {
                 document.getElementById('go-last-page').classList.add('button-round-inactive')
                 document.getElementById('go-next').classList.add('button-round-inactive')
             } 
-            if (pageCounter < getWindowResolution()) {
+            if (pageCounter < pageCardCount()) {
                 document.getElementById('go-last-page').classList.remove('button-round-inactive')
                 document.getElementById('go-next').classList.remove('button-round-inactive')
             }
@@ -131,7 +131,3 @@ function getPageNumber() {
 }
 
 getPageNumber()
-
-
-
-// console.log(getUniqueArray(3))

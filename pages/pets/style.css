@@ -118,14 +118,14 @@ header .wrapper {
     }
 
     .cards-container {
-            justify-content: center;
+        justify-content: center;
     }
 
     .our-pets-content h2 {
         margin-bottom: 40px;
     }
 
-    .card:nth-child(n+3) {
+    .card:nth-child(-n+5) {
         display: none;
     }
 
