@@ -6,7 +6,7 @@ let modalWindow = document.querySelector('.modal-window');
 let pageButtons = document.querySelectorAll('.pagination');
 let sliderButtons = document.querySelectorAll('.slider-button');
 let pageCounter = 1;
-let previousArray = [];
+
 
 function getWindowResolution() {
     if (window.screen.width < 768) {
@@ -45,27 +45,17 @@ function menuOpenClose() {
     burger.classList.toggle('rotate');
     document.querySelector('.mobile-menu').classList.toggle('show');
 }
-// function getCard() {
-//     for (i=0;i<cards.length;i++) {
-//         cards[i].innerHTML = `                        <img src="${pets[i].img}" alt=${pets[i].name}>
-//         <h3>${pets[i].name}</h3>
-//         <button class="button secondary">Learn more</button>`;
-//         cards[i].id = i;
-//     }
-// }
 
 function getCard() {
-    console.log(previousArray, 'previous')
-    let sliderArray = getUniqueArray(3);
     for (i=0;i<cards.length;i++) {
-        cards[i].innerHTML = `                        <img src="${pets[sliderArray[i]].img}" alt=${pets[sliderArray[i]].name}>
-        <h3>${pets[sliderArray[i]].name}</h3>
+        cards[i].innerHTML = `                        <img src="${pets[i].img}" alt=${pets[i].name}>
+        <h3>${pets[i].name}</h3>
         <button class="button secondary">Learn more</button>`;
-        cards[i].id = sliderArray[i];
+        cards[i].id = i;
     }
 }
 
-getCard();
+getCard()
 
 
 function getPopup() {
@@ -142,39 +132,6 @@ function getPageNumber() {
 
 getPageNumber()
 
-function slider() {
-    for (i=0;i<sliderButtons.length;i++) {
-        sliderButtons[i].onclick = function() {
-            if (this.id === 'next-slide') {
-                getCard()
-            }
-            if (this.id === 'previous-slide') {
-                getCard()
-            }
-        } 
-    }
-}
 
-slider()
-
-function getRandomNum(min, max) {
-    return Math.floor(Math.random() * (max - min));
-}
-// 2,1,5
-//4,0,3
-//6,5,2
-
-function getUniqueArray(number) {
-    let array = [];
-    for (i=0;array.length<number;i++) {
-       let x = Math.floor(Math.random() * 8)
-       if (!array.includes(x) && !previousArray.includes(x)) {
-        array.push(x)
-       }
-    }
-    previousArray = array.slice();
-    console.log(array, 'current')
-    return array;
-}
 
 // console.log(getUniqueArray(3))
