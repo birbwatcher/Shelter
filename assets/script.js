@@ -1,6 +1,5 @@
 let burger = document.querySelector('.burger');
 let blackout = document.querySelector('.blackout');
-let cards = document.querySelectorAll('.card');
 let modalCloseButton = document.querySelector('.modal-close-button');
 let modalWindow = document.querySelector('.modal-window');
 let pageButtons = document.querySelectorAll('.pagination');
@@ -9,7 +8,6 @@ let pageCounter = 1;
 let previousPage = [];
 
 let petsArray = getAllPets();
-console.log(petsArray)
 
 function pagePageCount() {
     if (window.screen.width < 768) {
@@ -21,6 +19,27 @@ function pagePageCount() {
     }
 }
 
+function cardsCount() {
+    if (window.screen.width < 768) {
+        return 3;
+    } else if (window.screen.width < 1280 && window.screen.width >= 768) {
+        return 6;
+    } else if (window.screen.width >= 1280) {
+        return 8;
+    }
+}
+
+function createCards() {
+    for (i=0;i<cardsCount();i++) {
+        let card = document.createElement("div");
+        document.querySelector(".cards-container").appendChild(card);
+        card.classList.add("card")
+    }
+}
+
+createCards()
+
+let cards = document.querySelectorAll('.card');
 
 burger.onclick = menuOpenClose;
 blackout.onclick = function() {
@@ -102,14 +121,12 @@ function cardClick() {
     for (i=0;i<cards.length;i++) {
         cards[i].onclick = function () {
             getPopup();
-            console.log(this.id);
             updateCard(this.id);
         }
     }
 }
 
 cardClick();
-
 
 function position() {
     return (48/pagePageCount()*(pageCounter-1))
