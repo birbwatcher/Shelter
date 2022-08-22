@@ -6,9 +6,12 @@ let modalWindow = document.querySelector('.modal-window');
 let pageButtons = document.querySelectorAll('.pagination');
 let sliderButtons = document.querySelectorAll('.slider-button');
 let pageCounter = 1;
+let previousPage = [];
 
+let petsArray = getAllPets();
+console.log(petsArray)
 
-function pageCardCount() {
+function pagePageCount() {
     if (window.screen.width < 768) {
         return 16;
     } else if (window.screen.width < 1280 && window.screen.width >= 768) {
@@ -46,12 +49,21 @@ function menuOpenClose() {
     document.querySelector('.mobile-menu').classList.toggle('show');
 }
 
+// function getCard() {
+//     for (i=0;i<cards.length;i++) {
+//         cards[i].innerHTML = `                        <img src="${pets[i].img}" alt=${pets[i].name}>
+//         <h3>${pets[i].name}</h3>
+//         <button class="button secondary">Learn more</button>`;
+//         cards[i].id = i;
+//     }
+// }
+
 function getCard() {
     for (i=0;i<cards.length;i++) {
-        cards[i].innerHTML = `                        <img src="${pets[i].img}" alt=${pets[i].name}>
-        <h3>${pets[i].name}</h3>
+        cards[i].innerHTML = `                        <img src="${pets[position() + petsArray[i]].img}" alt=${pets[position() + petsArray[i]].name}>
+        <h3>${pets[position() + petsArray[i]].name}</h3>
         <button class="button secondary">Learn more</button>`;
-        cards[i].id = i;
+        cards[i].id = position() + petsArray[i];
     }
 }
 
@@ -89,6 +101,7 @@ function cardClick() {
     for (i=0;i<cards.length;i++) {
         cards[i].onclick = function () {
             getPopup();
+            console.log(this.id);
             updateCard(this.id);
         }
     }
@@ -97,32 +110,37 @@ function cardClick() {
 cardClick();
 
 
+function position() {
+    return (48/pagePageCount()*(pageCounter-1))
+}
+
+
 function getPageNumber() {
     for (i=0;i<pageButtons.length;i++) {
         pageButtons[i].onclick = function () {
-            if (this.id === 'go-next' && pageCounter < getWindowResolution()) {
+            if (this.id === 'go-next' && pageCounter < pagePageCount()) {
                 pageCounter += 1;
             }  else if (this.id === 'go-previous' && pageCounter > 1) {
                 pageCounter -= 1;
             } else if (this.id === 'go-first-page') {
                 pageCounter = 1;
             } else if (this.id === 'go-last-page') {
-                pageCounter = pageCardCount();
+                pageCounter = pagePageCount();
             }
             document.getElementById('actual-page').innerHTML = `<h4>${pageCounter}</h4>`;
             if (pageCounter > 1) {
                 document.getElementById('go-first-page').classList.remove('button-round-inactive')
                 document.getElementById('go-previous').classList.remove('button-round-inactive')
-            } 
+            }
             if (pageCounter === 1) {
                 document.getElementById('go-first-page').classList.add('button-round-inactive')
                 document.getElementById('go-previous').classList.add('button-round-inactive')
-            } 
-            if (pageCounter === pageCardCount()) {
+            }
+            if (pageCounter === pagePageCount()) {
                 document.getElementById('go-last-page').classList.add('button-round-inactive')
                 document.getElementById('go-next').classList.add('button-round-inactive')
-            } 
-            if (pageCounter < pageCardCount()) {
+            }
+            if (pageCounter < pagePageCount()) {
                 document.getElementById('go-last-page').classList.remove('button-round-inactive')
                 document.getElementById('go-next').classList.remove('button-round-inactive')
             }
@@ -131,3 +149,53 @@ function getPageNumber() {
 }
 
 getPageNumber()
+
+
+function getArrayOfCards(count) {
+    let array = [];
+    for (i=0;array.length<count;i++) {
+       let x = Math.floor(Math.random() * 8)
+       if (!array.includes(x)) {
+        array.push(x)
+       }
+    }
+    return array;
+}
+
+function getAllPets() {
+    let result = [];
+    while(!(result.length === 48)) {
+        result.push(...getArrayOfCards(8))
+    }
+    return result;
+}
+
+// console.log(getAllPets())
+
+// function removeArrayRepeats(array, count) {
+//     console.log(array);
+//     let presult = [];
+//     let result = [];
+//         while (!(array.length === 0)) {
+//             console.log(array.length)
+//             for (i=0;presult.length<count;i++){
+//                 let x = array.shift();
+//                 if(!previousPage.includes(x)) {
+//                     presult.push(x);
+//                     // console.log(presult)
+//                     result.push(x);
+//                 }
+//             }
+//             console.log(previousPage, 'prevpage');
+//             console.log(presult, 'presult')
+//             previousPage = presult.slice();
+//             presult = [];
+//         }
+//     return result;
+// }
+
+// function removeArrayRepeats(array, count) {
+//     for (i=0;i<array.length;i++){
+//         if (array[i] === array[i+1])
+//     }
+// }

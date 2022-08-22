@@ -33,9 +33,9 @@ function getRandomNum(min, max) {
     return Math.floor(Math.random() * (max - min));
 }
 
-function getUniqueArray(number) {
+function getUniqueArray(count) {
     let array = [];
-    for (i=0;array.length<number;i++) {
+    for (i=0;array.length<count;i++) {
        let x = Math.floor(Math.random() * 8)
        if (!array.includes(x) && !prevSliderCards.includes(x)) {
         array.push(x)

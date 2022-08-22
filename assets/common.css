@@ -622,6 +622,7 @@ footer .wrapper {
     .pet-popup-content h2{
         margin-top: 3px;
         font-size: 35px;
+        text-align: center;
     }
 
     .pet-popup-content h3 {
