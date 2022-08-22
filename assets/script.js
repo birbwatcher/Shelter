@@ -60,12 +60,13 @@ function menuOpenClose() {
 
 function getCard() {
     for (i=0;i<cards.length;i++) {
-        cards[i].innerHTML = `                        <img src="${pets[position() + petsArray[i]].img}" alt=${pets[position() + petsArray[i]].name}>
-        <h3>${pets[position() + petsArray[i]].name}</h3>
+        cards[i].innerHTML = `                        <img src="${pets[petsArray[i + position()]].img}" alt=${pets[petsArray[i + position()]].name}>
+        <h3>${pets[petsArray[i + position()]].name}</h3>
         <button class="button secondary">Learn more</button>`;
-        cards[i].id = position() + petsArray[i];
+        cards[i].id = [petsArray[i + position()]];
     }
 }
+
 
 getCard()
 
@@ -120,12 +121,16 @@ function getPageNumber() {
         pageButtons[i].onclick = function () {
             if (this.id === 'go-next' && pageCounter < pagePageCount()) {
                 pageCounter += 1;
+                getCard();
             }  else if (this.id === 'go-previous' && pageCounter > 1) {
                 pageCounter -= 1;
+                getCard();
             } else if (this.id === 'go-first-page') {
                 pageCounter = 1;
+                getCard();
             } else if (this.id === 'go-last-page') {
                 pageCounter = pagePageCount();
+                getCard();
             }
             document.getElementById('actual-page').innerHTML = `<h4>${pageCounter}</h4>`;
             if (pageCounter > 1) {
