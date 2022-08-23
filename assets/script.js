@@ -173,9 +173,20 @@ function getPageNumber() {
 getPageNumber()
 
 
-function getArrayOfCards(count) {
+// function getArrayOfCards(count) {
+//     let array = [];
+//     for (i=0;array.length<count;i++) {
+//        let x = Math.floor(Math.random() * 8)
+//        if (!array.includes(x)) {
+//         array.push(x)
+//        }
+//     }
+//     return array;
+// }
+
+function getArrayOfCards() {
     let array = [];
-    for (i=0;array.length<count;i++) {
+    for (i=0;array.length<cardsCount();i++) {
        let x = Math.floor(Math.random() * 8)
        if (!array.includes(x)) {
         array.push(x)
@@ -184,10 +195,18 @@ function getArrayOfCards(count) {
     return array;
 }
 
+// function getAllPets() {
+//     let result = [];
+//     while(!(result.length === 48)) {
+//         result.push(...getArrayOfCards(8))
+//     }
+//     return result;
+// }
+
 function getAllPets() {
     let result = [];
     while(!(result.length === 48)) {
-        result.push(...getArrayOfCards(8))
+        result.push(...getArrayOfCards())
     }
     return result;
 }
