@@ -2,42 +2,6 @@ let burger = document.querySelector('.burger');
 let blackout = document.querySelector('.blackout');
 let modalCloseButton = document.querySelector('.modal-close-button');
 let modalWindow = document.querySelector('.modal-window');
-let pageButtons = document.querySelectorAll('.pagination');
-let sliderButtons = document.querySelectorAll('.slider-button');
-let pageCounter = 1;
-let previousPage = [];
-
-let petsArray = getAllPets();
-
-function pagePageCount() {
-    if (window.screen.width < 768) {
-        return 16;
-    } else if (window.screen.width < 1280 && window.screen.width >= 768) {
-        return 8;
-    } else if (window.screen.width >= 1280) {
-        return 6;
-    }
-}
-
-function cardsCount() {
-    if (window.screen.width < 768) {
-        return 3;
-    } else if (window.screen.width < 1280 && window.screen.width >= 768) {
-        return 6;
-    } else if (window.screen.width >= 1280) {
-        return 8;
-    }
-}
-
-function createCards() {
-    for (i=0;i<cardsCount();i++) {
-        let card = document.createElement("div");
-        document.querySelector(".cards-container").appendChild(card);
-        card.classList.add("card")
-    }
-}
-
-createCards()
 
 let cards = document.querySelectorAll('.card');
 
@@ -67,28 +31,6 @@ function menuOpenClose() {
     burger.classList.toggle('rotate');
     document.querySelector('.mobile-menu').classList.toggle('show');
 }
-
-// function getCard() {
-//     for (i=0;i<cards.length;i++) {
-//         cards[i].innerHTML = `                        <img src="${pets[i].img}" alt=${pets[i].name}>
-//         <h3>${pets[i].name}</h3>
-//         <button class="button secondary">Learn more</button>`;
-//         cards[i].id = i;
-//     }
-// }
-
-function getCard() {
-    for (i=0;i<cards.length;i++) {
-        cards[i].innerHTML = `                        <img src="${pets[petsArray[i + position()]].img}" alt=${pets[petsArray[i + position()]].name}>
-        <h3>${pets[petsArray[i + position()]].name}</h3>
-        <button class="button secondary">Learn more</button>`;
-        cards[i].id = [petsArray[i + position()]];
-    }
-}
-
-
-getCard()
-
 
 function getPopup() {
     getModal();
@@ -128,65 +70,9 @@ function cardClick() {
 
 cardClick();
 
-function position() {
-    return (48/pagePageCount()*(pageCounter-1))
-}
-
-
-function getPageNumber() {
-    for (i=0;i<pageButtons.length;i++) {
-        pageButtons[i].onclick = function () {
-            if (this.id === 'go-next' && pageCounter < pagePageCount()) {
-                pageCounter += 1;
-                getCard();
-            }  else if (this.id === 'go-previous' && pageCounter > 1) {
-                pageCounter -= 1;
-                getCard();
-            } else if (this.id === 'go-first-page') {
-                pageCounter = 1;
-                getCard();
-            } else if (this.id === 'go-last-page') {
-                pageCounter = pagePageCount();
-                getCard();
-            }
-            document.getElementById('actual-page').innerHTML = `<h4>${pageCounter}</h4>`;
-            if (pageCounter > 1) {
-                document.getElementById('go-first-page').classList.remove('button-round-inactive')
-                document.getElementById('go-previous').classList.remove('button-round-inactive')
-            }
-            if (pageCounter === 1) {
-                document.getElementById('go-first-page').classList.add('button-round-inactive')
-                document.getElementById('go-previous').classList.add('button-round-inactive')
-            }
-            if (pageCounter === pagePageCount()) {
-                document.getElementById('go-last-page').classList.add('button-round-inactive')
-                document.getElementById('go-next').classList.add('button-round-inactive')
-            }
-            if (pageCounter < pagePageCount()) {
-                document.getElementById('go-last-page').classList.remove('button-round-inactive')
-                document.getElementById('go-next').classList.remove('button-round-inactive')
-            }
-        }
-    }
-}
-
-getPageNumber()
-
-
-// function getArrayOfCards(count) {
-//     let array = [];
-//     for (i=0;array.length<count;i++) {
-//        let x = Math.floor(Math.random() * 8)
-//        if (!array.includes(x)) {
-//         array.push(x)
-//        }
-//     }
-//     return array;
-// }
-
-function getArrayOfCards() {
+function getArrayOfCards(count) {
     let array = [];
-    for (i=0;array.length<cardsCount();i++) {
+    for (i=0;array.length<count;i++) {
        let x = Math.floor(Math.random() * 8)
        if (!array.includes(x)) {
         array.push(x)
@@ -195,48 +81,3 @@ function getArrayOfCards() {
     return array;
 }
 
-// function getAllPets() {
-//     let result = [];
-//     while(!(result.length === 48)) {
-//         result.push(...getArrayOfCards(8))
-//     }
-//     return result;
-// }
-
-function getAllPets() {
-    let result = [];
-    while(!(result.length === 48)) {
-        result.push(...getArrayOfCards())
-    }
-    return result;
-}
-
-// console.log(getAllPets())
-
-// function removeArrayRepeats(array, count) {
-//     console.log(array);
-//     let presult = [];
-//     let result = [];
-//         while (!(array.length === 0)) {
-//             console.log(array.length)
-//             for (i=0;presult.length<count;i++){
-//                 let x = array.shift();
-//                 if(!previousPage.includes(x)) {
-//                     presult.push(x);
-//                     // console.log(presult)
-//                     result.push(x);
-//                 }
-//             }
-//             console.log(previousPage, 'prevpage');
-//             console.log(presult, 'presult')
-//             previousPage = presult.slice();
-//             presult = [];
-//         }
-//     return result;
-// }
-
-// function removeArrayRepeats(array, count) {
-//     for (i=0;i<array.length;i++){
-//         if (array[i] === array[i+1])
-//     }
-// }

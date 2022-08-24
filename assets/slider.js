@@ -1,7 +1,9 @@
+(function () {
+let cards = document.querySelectorAll('.card');
+let sliderButtons = document.querySelectorAll('.slider-button');
 let prevSliderCards = [];
 
 function getCard() {
-    console.log(prevSliderCards, 'previous')
     let sliderArray = getUniqueArray(3);
     for (i=0;i<cards.length;i++) {
         cards[i].innerHTML = `                        <img src="${pets[sliderArray[i]].img}" alt=${pets[sliderArray[i]].name}>
@@ -23,7 +25,7 @@ function slider() {
             if (this.id === 'previous-slide') {
                 getCard()
             }
-        } 
+        }
     }
 }
 
@@ -42,6 +44,7 @@ function getUniqueArray(count) {
        }
     }
     prevSliderCards = array.slice();
-    console.log(array, 'current')
     return array;
 }
+
+}());
