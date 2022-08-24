@@ -28,12 +28,14 @@ createCards()
 let cards = document.querySelectorAll('.card');
 
 function getCard() {
-    for (i=0;i<cards.length;i++) {
-        cards[i].innerHTML = `                        <img src="${pets[petsArray[i + position()]].img}" alt=${pets[petsArray[i + position()]].name}>
-        <h3>${pets[petsArray[i + position()]].name}</h3>
-        <button class="button secondary">Learn more</button>`;
-        cards[i].id = [petsArray[i + position()]];
-    }
+    setTimeout(function() {
+        for (i=0;i<cards.length;i++) {
+            cards[i].innerHTML = `                        <img src="${pets[petsArray[i + position()]].img}" alt=${pets[petsArray[i + position()]].name}>
+            <h3>${pets[petsArray[i + position()]].name}</h3>
+            <button class="button secondary">Learn more</button>`;
+            cards[i].id = [petsArray[i + position()]];
+        }
+    }, 300);
 }
 
 getCard()
@@ -59,9 +61,11 @@ function getPageNumber() {
             if (this.id === 'go-next' && pageCounter < pagePageCount()) {
                 pageCounter += 1;
                 getCard();
+                slideLeftEffect();
             }  else if (this.id === 'go-previous' && pageCounter > 1) {
                 pageCounter -= 1;
                 getCard();
+                slideRightEffect()
             } else if (this.id === 'go-first-page') {
                 pageCounter = 1;
                 getCard();
@@ -121,5 +125,38 @@ function cardClick() {
 }
 
 cardClick();
+
+function slideLeftEffect() {
+    for (i=0;i<cards.length;i++) {
+        cards[i].classList.add('slide-left');
+    }
+    setTimeout(function() {
+        for (i=0;i<cards.length;i++) {
+            cards[i].classList.remove('slide-left');
+        } ;
+    }, 300);
+}
+
+function slideLeftEffect() {
+    for (i=0;i<cards.length;i++) {
+        cards[i].classList.add('slide-left');
+    }
+    setTimeout(function() {
+        for (i=0;i<cards.length;i++) {
+            cards[i].classList.remove('slide-left');
+        } ;
+    }, 300);
+}
+
+function slideRightEffect() {
+    for (i=0;i<cards.length;i++) {
+        cards[i].classList.add('slide-right');
+    }
+    setTimeout(function() {
+        for (i=0;i<cards.length;i++) {
+            cards[i].classList.remove('slide-right');
+        } ;
+    }, 300);
+}
 
 }());

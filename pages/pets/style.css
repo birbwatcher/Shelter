@@ -4,10 +4,11 @@ header {
     position: fixed;
     width: 100%;
     background-color: white;
+    z-index: 1;
 }
 
 .blackout {
-    z-index: 2;
+    z-index: 3;
 }
 
 .logo-title {
@@ -40,6 +41,10 @@ header .wrapper {
 
 .our-pets-content h2{
     margin-bottom: 58px;
+}
+
+.card {
+    z-index: 0;
 }
 
 .cards-container {
@@ -148,7 +153,7 @@ header .wrapper {
 
     .mobile-menu {
         background-color: #FAFAFA;
-        z-index: 2;
+        z-index: 4;
     }
 
     .mobile-menu li {
@@ -156,11 +161,12 @@ header .wrapper {
     }
 
     .burger {
+        z-index: 2;
         /* z-index: 10; */
     }
 
     .rotate {
-        z-index: 3;
+        z-index: 5;
         transition-duration: 0.5s;
     }
 
