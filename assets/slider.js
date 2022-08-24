@@ -31,10 +31,6 @@ function slider() {
 
 slider()
 
-function getRandomNum(min, max) {
-    return Math.floor(Math.random() * (max - min));
-}
-
 function getUniqueArray(count) {
     let array = [];
     for (i=0;array.length<count;i++) {
