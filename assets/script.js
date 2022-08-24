@@ -103,3 +103,7 @@ function slideRightEffect() {
     }, 300);
 }
 
+document.querySelector('.credit-card').onclick = function() {
+    navigator.clipboard.writeText(document.getElementById('credit-card').innerHTML)
+}
+
