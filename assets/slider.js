@@ -4,16 +4,21 @@ let sliderButtons = document.querySelectorAll('.slider-button');
 let prevSliderCards = [];
 
 function getCard() {
-    let sliderArray = getUniqueArray(3);
-    for (i=0;i<cards.length;i++) {
-        cards[i].innerHTML = `                        <img src="${pets[sliderArray[i]].img}" alt=${pets[sliderArray[i]].name}>
-        <h3>${pets[sliderArray[i]].name}</h3>
-        <button class="button secondary">Learn more</button>`;
-        cards[i].id = sliderArray[i];
-    }
+    setTimeout(function() {
+        let sliderArray = getUniqueArray(3);
+        for (i=0;i<cards.length;i++) {
+            cards[i].innerHTML = `                        <img src="${pets[sliderArray[i]].img}" alt=${pets[sliderArray[i]].name}>
+            <h3>${pets[sliderArray[i]].name}</h3>
+            <button class="button secondary">Learn more</button>`;
+            cards[i].id = sliderArray[i];
+        }
+    ;}, 300);
 }
 
 getCard();
+
+
+
 
 
 function slider() {
@@ -21,9 +26,11 @@ function slider() {
         sliderButtons[i].onclick = function() {
             if (this.id === 'next-slide') {
                 getCard()
+                slideLeftEffect()
             }
             if (this.id === 'previous-slide') {
                 getCard()
+                slideRightEffect()
             }
         }
     }

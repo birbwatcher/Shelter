@@ -81,3 +81,25 @@ function getArrayOfCards(count) {
     return array;
 }
 
+function slideLeftEffect() {
+    for (i=0;i<cards.length;i++) {
+        cards[i].classList.add('slide-left');
+    }
+    setTimeout(function() {
+        for (i=0;i<cards.length;i++) {
+            cards[i].classList.remove('slide-left');
+        } ;
+    }, 300);
+}
+
+function slideRightEffect() {
+    for (i=0;i<cards.length;i++) {
+        cards[i].classList.add('slide-right');
+    }
+    setTimeout(function() {
+        for (i=0;i<cards.length;i++) {
+            cards[i].classList.remove('slide-right');
+        } ;
+    }, 300);
+}
+

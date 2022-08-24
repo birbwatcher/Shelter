@@ -170,6 +170,20 @@ a {
     overflow: hidden;
 }
 
+.slide-left {
+    transform: translate3d(-100px, 0, 0);
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+
+.slide-right {
+    transform: translate3d(100px, 0, 0);
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+
 /* ================
 Footer
 ================ */
