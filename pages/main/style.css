@@ -213,6 +213,10 @@ Donation
     margin-bottom: 0;
 }
 
+.copied {
+    position: absolute;
+}
+
 .legal-information {
     font-style: italic;
     font-size: 12px;

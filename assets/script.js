@@ -2,6 +2,7 @@ let burger = document.querySelector('.burger');
 let blackout = document.querySelector('.blackout');
 let modalCloseButton = document.querySelector('.modal-close-button');
 let modalWindow = document.querySelector('.modal-window');
+let creditcard = document.getElementById('credit-card');
 
 let cards = document.querySelectorAll('.card');
 
@@ -103,7 +104,10 @@ function slideRightEffect() {
     }, 300);
 }
 
-document.querySelector('.credit-card').onclick = function() {
-    navigator.clipboard.writeText(document.getElementById('credit-card').innerHTML)
+creditcard.onclick = function() {
+        navigator.clipboard.writeText('8380 2880 8028 8791 7435')
+        creditcard.innerHTML = '<h4>Copied!</h4>'
 }
+
+
 
