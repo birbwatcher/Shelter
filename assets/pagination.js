@@ -66,12 +66,14 @@ function getPageNumber() {
                 pageCounter -= 1;
                 getCard();
                 slideRightEffect()
-            } else if (this.id === 'go-first-page') {
+            } else if (this.id === 'go-first-page' && pageCounter > 1) {
                 pageCounter = 1;
                 getCard();
-            } else if (this.id === 'go-last-page') {
+                slideLeftEffect();
+            } else if (this.id === 'go-last-page' && pageCounter < 16) {
                 pageCounter = pagePageCount();
                 getCard();
+                slideLeftEffect();
             }
             document.getElementById('actual-page').innerHTML = `<h4>${pageCounter}</h4>`;
             if (pageCounter > 1) {
