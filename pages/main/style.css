@@ -145,6 +145,12 @@ Help
     grid-row-gap: 35px;
 }
 
+.icons-list .icon:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.25s;
+}
+
 /* ================
 Donation
 ================ */
