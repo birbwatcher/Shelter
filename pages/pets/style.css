@@ -1,0 +1,173 @@
+header {
+    display: flex;
+    padding: 30px 0px;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+}
+
+.blackout {
+    z-index: 3;
+}
+
+.logo-title {
+    color: #545454;
+}
+
+.logo-subtitle {
+    color: #292929;
+}
+
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    z-index: 0;
+}
+
+.our-pets {
+    background: #F6F6F6;
+}
+
+.our-pets-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* justify-content: center; */
+    align-items: center;
+    padding-top: 173px;
+}
+
+.our-pets-content h2{
+    margin-bottom: 58px;
+}
+
+.card {
+    z-index: 0;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 45px;
+    row-gap: 29px;
+}
+
+.card h3 {
+    margin-bottom: 30px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 340px;
+    margin-bottom: 100px;
+    margin-top: 16px;
+}
+
+.nav-menu li {
+    color: #545454;
+}
+
+.nav-menu li:hover {
+    color: #292929;
+}
+
+
+@media screen and (max-width: 1279.9px) and (min-width: 768px) {
+
+.cards-container{
+    justify-content: center;
+    margin-bottom: 23px;
+    row-gap: 30px;
+    column-gap: 38px;
+}
+
+.our-pets-content h2 {
+    margin-bottom: 27px;
+}
+
+/* .card:nth-child(n+7) {
+    display: none;
+} */
+
+.navigation {
+    margin-bottom: 77px;
+}
+
+}
+
+
+@media screen and (max-width: 767.9px) {
+    /* header {
+        z-index: 0;
+    } */
+
+    /* .blackout {
+        z-index: 1;
+    } */
+
+    h1, h2 {
+        font-size: 25px;
+        letter-spacing: 0.06em;
+    }
+
+    .burger {
+        position: fixed;
+    }
+
+    .our-pets-content {
+        padding-top: 141px;
+    }
+
+    .cards-container {
+        justify-content: center;
+    }
+
+    .our-pets-content h2 {
+        margin-bottom: 40px;
+    }
+
+    /* .card:nth-child(-n+5) {
+        display: none;
+    } */
+
+    .cards-container {
+        margin-bottom: 30px;
+        row-gap: 30px;
+    }
+
+    .navigation {
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 42px;
+        width: 100%;
+        margin-top: 14px;
+    }
+
+    .line {
+        border: 1px solid #000000;
+    }
+
+    .mobile-menu {
+        background-color: #FAFAFA;
+        z-index: 4;
+    }
+
+    .mobile-menu li {
+        color: #292929;;
+    }
+
+    .burger {
+        z-index: 2;
+        /* z-index: 10; */
+    }
+
+    .rotate {
+        z-index: 5;
+        transition-duration: 0.5s;
+    }
+
+}
