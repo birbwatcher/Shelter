@@ -75,6 +75,13 @@ header .wrapper {
     color: #292929;
 }
 
+.our-pets-content h1{
+    visibility: hidden;
+    font-size: 0px;
+    margin: 0;
+    padding: 0;
+}
+
 
 @media screen and (max-width: 1279.9px) and (min-width: 768px) {
 
