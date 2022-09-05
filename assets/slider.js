@@ -2,6 +2,7 @@
 let cards = document.querySelectorAll('.card');
 let sliderButtons = document.querySelectorAll('.slider-button');
 let prevSliderCards = [];
+let creditcard = document.getElementById('credit-card');
 
 function getCard() {
     setTimeout(function() {
@@ -48,6 +49,11 @@ function getUniqueArray(count) {
     }
     prevSliderCards = array.slice();
     return array;
+}
+
+creditcard.onclick = function() {
+    navigator.clipboard.writeText('8380 2880 8028 8791 7435')
+    creditcard.innerHTML = '<h4>Copied!</h4>'
 }
 
 }());
