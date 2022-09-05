@@ -2,7 +2,18 @@ let burger = document.querySelector('.burger');
 let blackout = document.querySelector('.blackout');
 let modalCloseButton = document.querySelector('.modal-close-button');
 let modalWindow = document.querySelector('.modal-window');
-let creditcard = document.getElementById('credit-card');
+
+let menuItems = document.querySelectorAll('.mobile-nav-menu a li');
+
+function menuItemsClose() {
+    for (i=0;i<menuItems.length;i++) {
+        menuItems[i].onclick = function() {
+            menuOpenClose()
+        }
+    }
+}
+
+menuItemsClose()
 
 let cards = document.querySelectorAll('.card');
 
@@ -104,10 +115,7 @@ function slideRightEffect() {
     }, 300);
 }
 
-creditcard.onclick = function() {
-        navigator.clipboard.writeText('8380 2880 8028 8791 7435')
-        creditcard.innerHTML = '<h4>Copied!</h4>'
-}
+
 
 
 
